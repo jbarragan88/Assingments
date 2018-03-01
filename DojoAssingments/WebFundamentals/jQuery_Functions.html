@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            alert('You are now working with jQuery!');
+
+            $("#class").click(function(){ //changes first paragraph red
+               $(".red").css("color", "red");//changes first paragraph red
+            });
+
+            $("#slide").click(function(){
+                $(".hidden").slideToggle("slow"); //slide toggles second paragraph
+            });
+
+            $("#append").click(function(){
+            $("#ap").append( "<p>I'm a ghost.</p>" );
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Add Class</h1>
+    <button id="class">Add Class</button>
+    <p class="red">Click the button to add class 'red' to this paragraph.</p>
+    <hr>
+    <h1>Slidetoggle</h1>
+    <button id="slide">Slidetoggle</button>
+    <p class="hidden">Click the button to slidetoggle a hidden image.</p>
+    <hr>
+    <div id="ap">
+    <h1>Append</h1>
+    <button id="append">Append</button>
+    <p class="clone">Click the button to append a new pargraph!</p> 
+    </div>
+    </body>
+</body>
+    </html>
+</body>
+</html>

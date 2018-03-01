@@ -1,0 +1,5 @@
+var reward = 0.01;
+for (var day = 1; day <= 30; day++) {
+    reward = reward*2;
+    console.log(day +" Day "+ reward);
+}

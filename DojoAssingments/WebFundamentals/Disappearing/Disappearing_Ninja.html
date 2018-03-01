@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            alert("hello");
+
+            $("img").click(function(){
+                $(this).fadeOut("slow");
+            });
+
+            $("button").click(function(){
+                $("img").show();
+            })
+        });
+    </script>
+    <style>
+        * {
+            width: 970px;
+            border: 1px solid black;
+        }
+        img {
+            width: 150px;
+            margin: 20px;
+        }
+        button {
+            width: 50px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery - Assignment 1</h1>
+    <img src="ninja.png" alt="ninja">
+    <img src="ninja.png" alt="ninja">
+    <img src="ninja.png" alt="ninja">
+    <img src="ninja.png" alt="ninja">
+    <img src="ninja.png" alt="ninja">
+    <img src="ninja.png" alt="ninja">
+    <img src="ninja.png" alt="ninja">
+    <img src="ninja.png" alt="ninja">
+    <button>Restore</button>
+</body>
+</html>
