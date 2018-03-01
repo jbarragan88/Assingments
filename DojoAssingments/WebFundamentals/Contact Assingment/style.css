@@ -1,0 +1,46 @@
+* {
+    width: 970px;
+    border: 2px solid red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    width: 950px;
+}
+#leftside {
+    display: inline-block;
+    width: 400px;
+}
+form {
+    display: inline-block;
+    width: 170px;
+}
+fieldset {
+    display: inline-block;
+    width: 150px;
+}
+form input{
+    display: inline;
+    width: 150px;
+}
+form p {
+    display: inline-block;
+    width: 100px;
+}
+textarea {
+    display: inline-block;
+    width: 150px;
+}
+#rightside {
+    display: inline-block;
+    width: 537px;
+    vertical-align: top;
+}
+.info {
+    display: inline-block;
+    width: 530px;
+    text-align: center;
+}
+.info h1, p {
+    display: inline-block;
+    width: 500px;
+}
