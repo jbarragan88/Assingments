@@ -3,20 +3,27 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Pokemon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
         function loop(){
-            for(var x=0; x < 151;x++){
-                return(arr[0]);
+            var image = "";
+            for(var x=1; x <= 151;x++){
+                image += '<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+[x]+'.png">'
             }
+            return(image);
         }
         $(document).ready(function(){
-
+            var imagee = loop();
+            $('body').append(`${imagee}`);
         });
     </script>
+    <style>
+        body {
+            width: 970px;
+        }
+    </style>
 </head>
 <body>
     

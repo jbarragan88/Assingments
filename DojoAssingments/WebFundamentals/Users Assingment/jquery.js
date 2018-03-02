@@ -6,7 +6,7 @@ $(document).ready(function(){
         var lname = $('#last_name').val();
         var email = $('#email_address').val();
         var phone = $('#phone_number').val();
-        $("table").append(`<tr><td>${fname}</td><td>${lname}</td><td>${email}</td><td>${phone}</td></tr>`);
+        $("table").append(`<tr><td>${fname}</td><td>${lname}</td><td>${email}</td><td>${phone}</td></tr>`); //creates new table row with forms input
         alert("You Have Submited");
         return false
     });
