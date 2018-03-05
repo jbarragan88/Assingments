@@ -10,22 +10,67 @@
         function loop(){
             var image = "";
             for(var x=1; x <= 151;x++){
-                image += '<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+[x]+'.png">'
+                image += '<img id="'+[x]+'" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+[x]+'.png">' //function to generate all the pokemon images in a row
             }
             return(image);
         }
         $(document).ready(function(){
             var imagee = loop();
-            $('body').append(`${imagee}`);
+            $('#left').append(`${imagee}`); //retrives function then all the images from the pokemon api and appends them to the left
+            $('#left').on('click', 'img', function(){
+                $.get("http://pokeapi.co/api/v2/pokemon/"+[num]+"/", function(res){
+                    $("#right").append(`<h1>Bulbasaur</h1>
+                        ${imagee}
+                        <h3>Types</h3>
+                        <ul>
+                            <li>poison</li>
+                            <li>grass</li>
+                        </ul>
+                         <h3>height</h3>
+                        <p>7</p>
+                        <h3>Weight</h3>
+                        <p>69</p>`)
+                });
+                alert('You finally clicked');
+            });
         });
     </script>
     <style>
         body {
             width: 970px;
+            border: 1px solid black;
         }
+        #left {
+            display: inline-block;
+            width: 600px;
+        }
+        #right {
+            position: fixed;
+            bottom: 100px;
+            right: 450px;
+            width: 350px;
+            border: 20px solid red;
+            text-align: center;
+        }
+    
     </style>
 </head>
 <body>
-    
+    <div id="left">
+
+    </div>
+    <div id="right">
+        <h1>Bulbasaur</h1>
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png">
+        <h3>Types</h3>
+        <ul>
+            <li>poison</li>
+            <li>grass</li>
+        </ul>
+        <h3>height</h3>
+        <p>7</p>
+        <h3>Weight</h3>
+        <p>69</p>
+    </div>
 </body>
 </html>
