@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Guess The Number Game</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css' )}}">
+    </head>
+    <body>
+        <h1>The Great Number Game!</h1>
+        <p>I am thinking of a number between 1 and 100</p>
+        <div id="wrong">
+            <p>Try Again</p>
+            <form action='/answer' method='post'>
+                <input type='text' name='guess'>
+                <input type='submit'>
+            </form>
+            <p>{{session['no']}}</p>
+        </div>
+    </body>
+</html>

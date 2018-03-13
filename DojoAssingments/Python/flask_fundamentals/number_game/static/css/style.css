@@ -1,0 +1,13 @@
+body {
+    width: 897px;
+    margin: auto;
+}
+h1,h2,a, p, form {
+    text-align: center;
+}
+#wrong {
+    background-color: red;
+}
+#correct {
+    background-color: green;
+}

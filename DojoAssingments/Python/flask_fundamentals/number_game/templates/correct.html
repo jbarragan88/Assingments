@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Guess The Number Game</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css' )}}">
+    </head>
+    <body>
+        <h1>The Great Number Game!</h1>
+        <div id="correct">
+            <h1>{{session['randnumber']}}</h1>
+            <h2>Your number was correct!</h2>
+        </div>
+        <a href="/">Play Again</a>
+    </body>
+</html>

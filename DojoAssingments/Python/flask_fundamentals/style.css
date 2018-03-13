@@ -1,0 +1,7 @@
+body {
+    width: 897px;
+    margin: auto;
+}
+h1, p, form {
+    text-align: center;
+}
