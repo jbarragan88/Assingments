@@ -23,6 +23,7 @@ def registering():
     queryce = "SELECT email FROM users WHERE email LIKE :email"
     querycu = "SELECT username FROM users WHERE username LIKE :username"
     error = []
+
     #checking number of characters
     if len(username) < 2:
         print "error3"
@@ -36,10 +37,12 @@ def registering():
     if len(password) < 9:
         print "error3"
         error.append(flash("Password Must Be Atleast 8 Characters Long"))
+
     #comparing passwords
     if password != confirm_password:
         print "error4"
         error.append(flash("Passwords Don't Match"))
+
     #checking if existing in database
     if mysql.query_db(queryce,datac) != []:
         print "error1"
@@ -47,15 +50,19 @@ def registering():
     if mysql.query_db(querycu,datac) != []:
         print "error2"
         error.append(flash('Username Already In Use')) 
+
     #looping through each letter to check for unwanted numbers
     for x in first_name:
-        print x
         x = (x.decode('unicode_escape').encode('ascii','ignore'))
-        print (x.decode('unicode_escape').encode('ascii','ignore'))
-        print type(x)
-        if type(x) == "int":
+        if x == "1" or x == "2" or x == "3" or x == "4" or x == "5" or x == "6" or x == "7" or x == "8" or x == "9" or x == "0": #each letter or number inside first name is a str so we check numbers as strings
             print "error5"
             error.append(flash('First Name Cannot Have Numbers'))
+    for y in last_name:
+        y = (x.decode('unicode_escape').encode('ascii','ignore'))
+        if y == "1" or x == "2" or x == "3" or x == "4" or x == "5" or x == "6" or x == "7" or x == "8" or x == "9" or x == "0": #each letter or number inside last name is a str so we check numbers as strings
+            print "error5"
+            error.append(flash('Last Name Cannot Have Numbers'))
+
     #sending all errors to html template
     if error: 
         print "rendering"
