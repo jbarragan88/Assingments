@@ -9,5 +9,10 @@
     <h1>Saved Email Addresses</h1>
     {% for friend in all_emails: %}
    <p> {{ friend['email'] }}</p>
+   <form action="/delete/{{ friend['id'] }}", method="post">
+        <input type="submit" value="delete">
+    </form>
     {% endfor %}
+    <br>
+    <a href="/">Go Back to Input Page</a>
 </html>
