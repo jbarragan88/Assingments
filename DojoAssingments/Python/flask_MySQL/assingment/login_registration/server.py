@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, session, flash, request
 from mysqlconnection import MySQLConnector
+import os, binascii # include this at the top of your file
 
 app = Flask(__name__)
 mysql = MySQLConnector(app, 'nothing')
@@ -81,7 +82,7 @@ def registering():
 
 @app.route('/success')
 def loggedin():
-    return render_template('loggedin.html')
+    return render_template('loggedin.html', name=session['user'][0][u'username'], first_name=session['user'][0][u'first_name'])
 
 @app.route('/login', methods=['POST'])
 def logging_in():
@@ -101,6 +102,14 @@ def logging_in():
     #if username exist compare the input password with the usernames password in the database
     if mysql.query_db(querylp,data)[0][u'password'] != password:
         return redirect('/')
+    
+    queryu = "SELECT * FROM users WHERE username LIKE :username"
+    session['user'] = mysql.query_db(queryu,data)
+    print session['user'][0][u'first_name']
     return redirect('/success')
 
+@app.route('/logout')
+def loggingoff():
+    session['user'] = []
+    return redirect('/')
 app.run(debug=True)
