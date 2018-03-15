@@ -24,7 +24,9 @@ def validation():
 
 @app.route('/yes')
 def yess():
-    return render_template('success.html')
+    query = "SELECT * FROM users"
+    emails = mysql.query_db(query)
+    return render_template('success.html', all_emails=emails)
 
 @app.route('/no')
 def noo():
