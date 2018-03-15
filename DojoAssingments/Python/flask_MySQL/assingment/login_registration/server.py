@@ -63,13 +63,44 @@ def registering():
             print "error5"
             error.append(flash('Last Name Cannot Have Numbers'))
 
+    data = {
+            'first_name': request.form['first_name'],
+            'last_name': request.form['last_name'],
+            'email': request.form['email'],
+            'username': request.form['username'],
+            'password': request.form['password'],
+            }
     #sending all errors to html template
     if error: 
         print "rendering"
         return render_template('index.html/', error= error)
+    else:
+        query1 = "INSERT INTO users (first_name, last_name, username, email, password, created_at) VALUES (:first_name, :last_name, :username, :email, :password, NOW())"
+        mysql.query_db(query1,data)
+        return redirect('/success')
+
+@app.route('/success')
+def loggedin():
+    return render_template('loggedin.html')
 
 @app.route('/login', methods=['POST'])
 def logging_in():
-    return redirect('/')
+    data = {
+            'password': request.form['password'],
+            'username': request.form['username']
+            }
+    password = request.form['password']
+    querylp = "SELECT password FROM users WHERE username LIKE :username"
+    querylu = "SELECT username FROM users WHERE username LIKE :username"
+
+    #checking for existance of the input username
+    if mysql.query_db(querylu,data) == []:
+        print "unerror"
+        return redirect('/')
+    
+    #if username exist compare the input password with the usernames password in the database
+    if mysql.query_db(querylp,data)[0][u'password'] != password:
+        return redirect('/')
+    return redirect('/success')
 
 app.run(debug=True)
