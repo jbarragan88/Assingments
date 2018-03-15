@@ -26,7 +26,7 @@ def validation():
 def yess():
     return render_template('success.html')
 
-@app.route('/no', methods=['POST'])
+@app.route('/no')
 def noo():
     return render_template('invalid.html')
 app.run(debug=True)

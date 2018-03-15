@@ -1,9 +1,11 @@
 <html>
     <head>
         <title>Deja Tu Email</title>
-        <link rel="stylesheet" type="text/css" href="">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
     </head>
-    <h1>SUCCESS</h1>
+    <div id="green">
+        <h1>Email Saved Succesfully</h1>
+    </div>
     <form action="/validate", method="post">
         Email Address: <input type="email" name="email" id="email">
         <input type="submit" value="Submit">
