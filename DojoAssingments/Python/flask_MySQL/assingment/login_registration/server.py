@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, session, flash, request
 from mysqlconnection import MySQLConnector
+import md5
 import os, binascii # include this at the top of your file
 
 app = Flask(__name__)
@@ -21,6 +22,8 @@ def registering():
     last_name = request.form['last_name']
     password = request.form['password']
     confirm_password = request.form['cpassword']
+    salt =  binascii.b2a_hex(os.urandom(15))
+    hashed_pw = md5.new(password + salt).hexdigest()
     queryce = "SELECT email FROM users WHERE email LIKE :email"
     querycu = "SELECT username FROM users WHERE username LIKE :username"
     error = []
@@ -70,14 +73,18 @@ def registering():
             'email': request.form['email'],
             'username': request.form['username'],
             'password': request.form['password'],
+            'hashed_pw': hashed_pw,
+            'salt': salt
             }
     #sending all errors to html template
     if error: 
         print "rendering"
         return render_template('index.html/', error= error)
     else:
-        query1 = "INSERT INTO users (first_name, last_name, username, email, password, created_at) VALUES (:first_name, :last_name, :username, :email, :password, NOW())"
+        query1 = "INSERT INTO users (first_name, last_name, username, email, password, salt, created_at) VALUES (:first_name, :last_name, :username, :email, :hashed_pw, :salt, NOW())"
         mysql.query_db(query1,data)
+        queryu = "SELECT * FROM users WHERE username LIKE :username"
+        session['user'] = mysql.query_db(queryu,data)
         return redirect('/success')
 
 @app.route('/success')
@@ -93,20 +100,20 @@ def logging_in():
     password = request.form['password']
     querylp = "SELECT password FROM users WHERE username LIKE :username"
     querylu = "SELECT username FROM users WHERE username LIKE :username"
-
+    query_data = {'username': request.form['username']}
+    user_query = "SELECT * FROM users WHERE users.username = :username LIMIT 1"
+    user = mysql.query_db(user_query, query_data)
     #checking for existance of the input username
-    if mysql.query_db(querylu,data) == []:
-        print "unerror"
-        return redirect('/')
-    
-    #if username exist compare the input password with the usernames password in the database
-    if mysql.query_db(querylp,data)[0][u'password'] != password:
-        return redirect('/')
-    
-    queryu = "SELECT * FROM users WHERE username LIKE :username"
-    session['user'] = mysql.query_db(queryu,data)
-    print session['user'][0][u'first_name']
-    return redirect('/success')
+    if mysql.query_db(querylu,data) != []:
+        print "gucci"
+        encrypted_password = md5.new(password + user[0]['salt']).hexdigest()
+         #if username exist compare the input password with the usernames password in the database
+        if mysql.query_db(querylp,data)[0][u'password'] == encrypted_password:
+            queryu = "SELECT * FROM users WHERE username LIKE :username"
+            session['user'] = mysql.query_db(queryu,data)
+            print session['user'][0][u'first_name']
+            return redirect('/success')
+    return redirect('/')
 
 @app.route('/logout')
 def loggingoff():
