@@ -5,13 +5,23 @@
     <body>
         <h1>Register!</h1>
         <h2>For a whole lot of nothing</h2>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block body %}{% endblock %}
         <form action="/registration" method="post">
             First Name: <input type="text" name="first_name" id="first_name">
             Last Name: <input type="text" name="last_name" id="last_name">
             Username: <input type="text" name="username" id="username">
             Email: <input type="text" name="email" id="email">
-            Password: <input type="text" name="password" id="password">
-            Confirm Password: <input type="text" name="cpassword" id="cpassword">
+            Password: <input type="password" name="password" id="password">
+            Confirm Password: <input type="password" name="cpassword" id="cpassword">
             <input type="submit" value="Register">
         </form>
         <br>
