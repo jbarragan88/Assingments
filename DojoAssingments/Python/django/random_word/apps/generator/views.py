@@ -15,4 +15,4 @@ def index(request):
 def reset(request):
     request.session['attempt'] = 0
     print "made it to little url reset"
-    return redirect('/')
+    return redirect('http://localhost:8000/')
