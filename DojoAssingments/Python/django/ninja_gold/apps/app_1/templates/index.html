@@ -3,7 +3,7 @@
         <title>Ninja Gold</title>
     </head>
     <body>
-        <p>Your Gold:</p>
+        <p>Your Gold: {{ request.session.gold }}</p> <a href="/reset">Start Over</a>
         <div class="find">
             <h2>Farm</h2>
             <p>(earns 10-20 gold)</p>
@@ -33,16 +33,19 @@
         </div>
         <div class="find">
             <h2>Casino</h2>
-            <p>(earns 0-50 gold)</p>
+            <p>(earns/takes 0-50 gold)</p>
             <form action="/counting" method="post">
                     {% csrf_token %}
                 <input type="hidden" name="building" value="casino">
                 <input type="submit" value="Find Gold!">
             </form>
         </div>
-        <p>Activities</p>
+        <p>Activities:</p>
         <div id="log">
-
+            <p> {% for act in request.session.activities %}
+					{{ act }}<br>
+            {% endfor %} </p>
         </div>
+
     </body>
 </html>
