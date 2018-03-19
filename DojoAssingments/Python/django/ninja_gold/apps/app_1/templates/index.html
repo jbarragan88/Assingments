@@ -7,32 +7,36 @@
         <div class="find">
             <h2>Farm</h2>
             <p>(earns 10-20 gold)</p>
-            <form action="">
-                <input type="hidden" name="farm" id="farm">
+            <form action="/counting" method="post">
+                    {% csrf_token %}
+                <input type="hidden" name="building" value="farm">
                 <input type="submit" value="Find Gold!">
             </form>
         </div>
         <div class="find">
             <h2>Cave</h2>
             <p>(earns 5-10 gold)</p>
-            <form action="">
-                <input type="hidden" name="cave" id="cave">
+            <form action="/counting" method="post">
+                    {% csrf_token %}
+                <input type="hidden" name="building" value="cave">
                 <input type="submit" value="Find Gold!">
             </form>
         </div>
         <div class="find">
             <h2>House</h2>
             <p>(earns 2-5 gold)</p>
-            <form action="">
-                <input type="hidden" name="house" id="house">
+            <form action="/counting" method="post">
+                    {% csrf_token %}
+                <input type="hidden" name="building" value="house">
                 <input type="submit" value="Find Gold!">
             </form>
         </div>
         <div class="find">
             <h2>Casino</h2>
             <p>(earns 0-50 gold)</p>
-            <form action="">
-                <input type="hidden" name="casino" id="casino">
+            <form action="/counting" method="post">
+                    {% csrf_token %}
+                <input type="hidden" name="building" value="casino">
                 <input type="submit" value="Find Gold!">
             </form>
         </div>
