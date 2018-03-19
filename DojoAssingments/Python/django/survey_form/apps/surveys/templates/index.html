@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Survey Form</title>
+    </head>
+    <body>
+        <h1>Fill Out Survey</h1>
+        <form action='/send' method='post'>
+            {% csrf_token %}
+            Name: <input type='text' name='name'>
+            Dojo Location: 
+            <select name="location">
+              <option value="Chicago">Chicago</option>
+              <option value="Casa Blanca">Casa Blanca</option>
+              <option value="Ayutla">Ayutla</option>
+              <option value="Silicon Valley">Silicon Valley</option>
+            </select>
+            Favorite Language: 
+            <select name="language">
+                <option value="Python">Python</option>
+                <option value="C#">C#</option>
+                <option value="MEAN">MEAN</option>
+            </select>
+            Comment (optional):
+            <textarea name="comment" id="" cols="30" rows="10"></textarea>
+            <input type='submit' value='submit'>
+        </form>
+    </body>
+</html>
