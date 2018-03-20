@@ -10,7 +10,7 @@
 			<li>{{user.id}}--<a href="/user/{{ user.id }}">{{user.full_name}}</a>--{{user.email}}--{{user.created_at}} 
                 <a href="/user/{{ user.id }}">Show</a> ||
                 <a href="">Edit</a> ||
-                <a href="">Delete</a>
+                <a href="/user/{{ user.id }}/delete">Delete</a>
             </li>
 			
 			{% endfor %}

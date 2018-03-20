@@ -19,7 +19,17 @@ def creating(request):
         full_name= request.POST['name'],
         email= request.POST['email'],
     )
-    return redirect('/')
+    return redirect('/users')
 
 def viewuser(request, id):
     return render(request, 'user.html', {'user': Users.objects.get(id=id)})
+
+def delete(request, id):
+    b = Users.objects.get(id=id)
+    b.delete()
+    return redirect('/users')
+
+def update(request, id):
+    b = Users.objects.get(id=id)
+    b.delete()
+    return redirect('/users')
