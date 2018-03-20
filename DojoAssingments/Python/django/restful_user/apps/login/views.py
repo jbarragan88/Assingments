@@ -21,5 +21,5 @@ def creating(request):
     )
     return redirect('/')
 
-def user(request):
-    return render(request, 'user.html')
+def viewuser(request, id):
+    return render(request, 'user.html', {'user': Users.objects.get(id=id)})
