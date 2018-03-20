@@ -10,3 +10,5 @@ class User(models.Model):
     age = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
+
+    #User.objects.create(first_name="Francisco", last_name="Barragan", email_address="fbarragan4@mail.com", age="43")
