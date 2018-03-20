@@ -36,4 +36,8 @@ def update(request, id):
     return render(request, 'update.html', contexto)
 
 def updating(request, id):
+    b = Users.objects.get(id=id)
+    b.full_name= request.POST['name']
+    b.email= request.POST['email']
+    b.save()
     return redirect('/users')

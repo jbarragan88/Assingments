@@ -5,10 +5,14 @@
     <body>
         <h1>Edit User {{ usario.id }}</h1>
 
-        <form action="/user/{{ usario.id }}/updating">
+        <form action="/user/{{ usario.id }}/updating" method="post">
+            {% csrf_token %}
         <input type="text" name="name" id="name" value="{{ usario.full_name }}">
         <input type="text" name="email" id="email" value="{{ usario.email }}">
         <input type="submit" value="Update">
         </form>
+        <br>
+        <a href="{% url 'users' %}">Users</a> ||
+        <a href="{% url 'index' %}">Home</a>
     </body>
 </html>
