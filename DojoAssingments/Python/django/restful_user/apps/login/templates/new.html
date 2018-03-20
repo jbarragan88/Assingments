@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>New User</title>
+    </head>
+    <body>
+        <h1>Add a new user</h1>
+        <form action="{% url 'creating' %}" method="post">
+                {% csrf_token %}
+            Full Name:
+            <input type="text" name="name" id="name">
+            Email:
+            <input type="email" name="email" id="email">
+            <input type="submit" value="Create">
+        </form>
+        <a href="{% url 'index' %}">Home</a>
+    </body>
+</html>
