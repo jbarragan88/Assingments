@@ -30,6 +30,10 @@ def delete(request, id):
     return redirect('/users')
 
 def update(request, id):
-    b = Users.objects.get(id=id)
-    b.delete()
+    contexto = {
+        "usario": Users.objects.get(id=id)
+    }
+    return render(request, 'update.html', contexto)
+
+def updating(request, id):
     return redirect('/users')

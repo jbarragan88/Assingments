@@ -7,7 +7,7 @@
         <p>Name: {{user.full_name}}</p>
         <p>Email: {{user.email}}</p>
         <p>Created: {{user.created_at}}</p>
-        <a href="">Edit</a> ||
+        <a href="/user/{{ user.id }}/update">Edit</a> ||
         <a href="/user/{{ user.id }}/delete">Delete</a>
         <br>
         <hr>

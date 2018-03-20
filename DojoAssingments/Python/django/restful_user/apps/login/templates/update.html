@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Updating</title>
+    </head>
+    <body>
+        <h1>Edit User {{ usario.id }}</h1>
+
+        <form action="/user/{{ usario.id }}/updating">
+        <input type="text" name="name" id="name" value="{{ usario.full_name }}">
+        <input type="text" name="email" id="email" value="{{ usario.email }}">
+        <input type="submit" value="Update">
+        </form>
+    </body>
+</html>
