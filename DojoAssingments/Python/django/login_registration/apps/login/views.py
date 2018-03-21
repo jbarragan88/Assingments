@@ -15,20 +15,47 @@ def registration(request):
         for tag, error in errors.iteritems():
             messages.error(request, error)
         return redirect('/')
+    
     else:
-        first_name = request.POST['first_name']
-		last_name = request.POST['last_name']
-		email = request.POST['email']
-		password = request.POST['password']
-        hashed_pw = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
+            first_name = request.POST['first_name']
+            last_name = request.POST['last_name']
+            email = request.POST['email']
+            password = request.POST['password']
+            hashed_pw = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
 
-        User.objects.create(first_name=first_name, last_name=last_name, email=email, password=hashed_pw)
-        user = User.objects.get(email=email)
-        request.session['id'] = user.id
-        return redirect('/loggedin')
+            User.objects.create(first_name=first_name, last_name=last_name, email=email, password=hashed_pw)
+            user = User.objects.get(email=email)
+            request.session['id'] = user.id
+            return redirect('/loggedin')
 
 def login(request):
-    return redirect('/loggedin')
+    email = request.POST['email']
+    password = request.POST['password']
+
+    user = User.objects.filter(email=email)
+
+    if len(user) < 1:
+        messages.error(request, "User does not exists")
+        return redirect('/')
+    
+    else:
+        cpassword = bcrypt.checkpw(password.encode(), user[0].password.encode())
+        if cpassword:
+            request.session['id'] = user[0].id
+            return redirect('/loggedin')
+        else:
+            messages.error(request, "Incorrect username/password combination.")
+            return redirect('/')
 
 def loggedin(request):
-    return render(request, 'loggedin.html')
+    if request.session.get('id') == None:
+        return redirect('/')
+    user = User.objects.get(id=request.session['id'])
+    context = {
+        'user': user
+    }
+    return render(request, 'loggedin.html', context)
+
+def logout(request):
+    request.session.clear()
+    return redirect('/')

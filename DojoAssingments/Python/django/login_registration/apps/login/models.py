@@ -30,7 +30,7 @@ class UserManager(models.Manager):
             errors['email'] = "This is not a valid email."
         else:
             if User.objects.filter(email=postData['email']):
-                errors['email'] = "This use already exists."
+                errors['email'] = "This email already exists."
 
         #validating password
         if len(postData['password']) < 8:
