@@ -6,13 +6,19 @@
         <h1>NOTHING!</h1>
         <p>A new world awaits you...</p>
         <hr>
+        {% if messages %}
+			<ul class="messages">
+    		{% for message in messages %}
+    			<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    		{% endfor %}
+			</ul>
+        {% endif %}
         <h2>Register!</h2>
         <h3>For a whole lot of nothing</h3>
         <form action="/registration" method="post">
             {% csrf_token %}
             First Name: <input type="text" name="first_name" id="first_name">
             Last Name: <input type="text" name="last_name" id="last_name">
-            Username: <input type="text" name="username" id="username">
             Email: <input type="email" name="email" id="email">
             Password: <input type="password" name="password" id="password">
             Confirm Password: <input type="password" name="cpassword" id="cpassword">

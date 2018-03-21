@@ -1,24 +1,26 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
 
 # Create your models here.
 class UserManager(models.Manager):
     def validate_user(request, postData):
-        errors {}
+        errors = {}
 
         #validating first name 
         if len(postData['first_name']) < 2 or postData['first_name'].isalpha():
             if len(postData['first_name']) < 2:
                 errors['first_name'] = "First Name must contain more than 2 characters."
-            if postData['first_name'].isalpha():
+            if not postData['first_name'].isalpha():
                 errors['first_name_alpha'] = "First Name must contain only characters."
 
         #validating last name 
         if len(postData['last_name']) < 2 or postData['last_name'].isalpha():
             if len(postData['last_name']) < 2:
                 errors['last_name'] = "Last Name must contain more than 2 characters."
-            if postData['last_name'].isalpha():
+            if not postData['last_name'].isalpha():
                 errors['last_name_alpha'] = "Last Name must contain only characters."
 
         #validating email
@@ -33,7 +35,7 @@ class UserManager(models.Manager):
         #validating password
         if len(postData['password']) < 8:
             errors['password'] = "Password must be at least 8 characters long"
-        if postData['password']) != postData['cpassword'])
+        if postData['password'] != postData['cpassword']:
             errors['cpassword'] = "Passwords must match"
         
         return errors
