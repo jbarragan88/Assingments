@@ -26,6 +26,7 @@ def registration(request):
             User.objects.create(first_name=first_name, last_name=last_name, email=email, password=hashed_pw)
             user = User.objects.get(email=email)
             request.session['id'] = user.id
+            messages.success(request, 'Successfully Registered')
             return redirect('/loggedin')
 
 def login(request):
@@ -42,6 +43,7 @@ def login(request):
         cpassword = bcrypt.checkpw(password.encode(), user[0].password.encode())
         if cpassword:
             request.session['id'] = user[0].id
+            messages.success(request, 'Successfully Logged In')
             return redirect('/loggedin')
         else:
             messages.error(request, "Incorrect username/password combination.")

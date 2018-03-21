@@ -20,15 +20,15 @@
             <h3>For a whole lot of nothing</h3>
             <form action="/registration" method="post">
             {% csrf_token %}
-            <input type="text" name="first_name" id="first_name">First Name
+            <input type="text" name="first_name" id="first_name"> First Name
             <br>
             <input type="text" name="last_name" id="last_name"> Last Name
             <br>
-            <input type="email" name="email" id="email">Email
+            <input type="email" name="email" id="email"> Email
             <br>
             <input type="password" name="password" id="password"> Password
             <br>
-            <input type="password" name="cpassword" id="cpassword">Confirm Password
+            <input type="password" name="cpassword" id="cpassword"> Confirm Password
             <br>
             <input type="submit" value="Register">
             </form>
@@ -38,9 +38,9 @@
             <h3>Already have an account full of nothing?</h3>
             <form action="/login" method="post">
              {% csrf_token %}
-                <input type="email" name="email" id="email">Email
+                <input type="email" name="email" id="email"> Email
                 <br>
-                <input type="password" name="password" id="password">Password
+                <input type="password" name="password" id="password"> Password
                 <br>
                 <input type="submit" value="Login">
             </form>
