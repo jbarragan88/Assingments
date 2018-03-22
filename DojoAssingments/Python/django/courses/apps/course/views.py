@@ -1,0 +1,11 @@
+from django.shortcuts import render, redirect
+from ..login.models import *
+# Create your views here.
+def loggedin(request, id):
+    if request.session.get('id') == None:
+        return redirect('/')
+    user = User.objects.get(id=request.session['id'])
+    context = {
+        'user': user
+    }
+    return render(request , 'loggedin.html', context)
