@@ -17,6 +17,6 @@
             <li>Name: {{ user.first_name}} {{ user.last_name}}</li>
         </ul>
         <a href="/logout">Log Off</a>
-        <a href="{{ user.id }}/courses">View Courses</a>
+        <a href="/{{ user.id }}/courses">View Courses</a>
     </body>
 </html>

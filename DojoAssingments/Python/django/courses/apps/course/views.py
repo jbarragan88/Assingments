@@ -23,3 +23,10 @@ def add(request, id):
         'user': user
     }
     return render(request, 'create.html', context)
+
+def view(request, id):
+    user = User.objects.get(id=request.session['id'])
+    context = {
+        'user': user
+    }
+    return render(request, 'view.html', context)
