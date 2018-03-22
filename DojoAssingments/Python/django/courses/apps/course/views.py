@@ -9,3 +9,17 @@ def loggedin(request, id):
         'user': user
     }
     return render(request , 'loggedin.html', context)
+
+def courses(request, id):
+    user = User.objects.get(id=request.session['id'])
+    context = {
+        'user': user
+    }
+    return render(request, 'courses.html', context)
+
+def add(request, id):
+    user = User.objects.get(id=request.session['id'])
+    context = {
+        'user': user
+    }
+    return render(request, 'create.html', context)
