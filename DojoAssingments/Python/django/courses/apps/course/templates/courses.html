@@ -27,7 +27,9 @@
                     {% else %}
                     <a href="/{{ user.id }}/{{ course.id}}/like">Like</a>
                     {% endif %}
-                    <a href="">Delete</a>
+                    {% if course in user.created_courses.all %}
+                    <a href="/{{ user.id }}/{{ course.id}}/delete">Delete</a>
+                    {% endif %}
                 </td>
             </tr>
             {% endfor %}

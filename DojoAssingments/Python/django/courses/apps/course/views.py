@@ -100,3 +100,9 @@ def unlike(request, id, course_id):
     user = User.objects.get(id=request.session['id'])
     course.likers.remove(user)
     return redirect('/{}/courses'.format(id))
+
+def delete(request, id, course_id):
+    print "deleting"
+    b = Course.objects.get(id=course_id)
+    b.delete()
+    return redirect('/{}/courses'.format(id))
