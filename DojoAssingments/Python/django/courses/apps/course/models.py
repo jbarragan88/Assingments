@@ -18,7 +18,7 @@ class CourseManager(models.Manager):
         return errors
 
 class Description(models.Model):
-    description = models.TextField()
+    description = models.CharField(max_length=255)
 
 class Course(models.Model):
     course_name = models.CharField(max_length=255)

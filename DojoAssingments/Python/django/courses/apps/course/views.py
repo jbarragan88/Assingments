@@ -15,9 +15,11 @@ def loggedin(request, id):
 def courses(request, id):
     user = User.objects.get(id=request.session['id'])
     all_courses = Course.objects.all()
+    liked = User.objects
+
     context = {
         'user': user,
-        'all_courses': Course.objects.all()
+        'all_courses': Course.objects.all(),
     }
     return render(request, 'courses.html', context)
 
@@ -71,15 +73,30 @@ def update(request, id, course_id):
 def updating(request, id, course_id):
     user = User.objects.get(id=request.session['id'])
     all_courses = Course.objects.all()
+    print Course.objects.get(id=course_id).description.description
 
     #updating Course Name
-    b = Course.objects.get(id=course_id)
-    b.course_name= request.POST['course_name']
-    b.save()
+    #b = Course.objects.get(id=course_id)
+    #b.course_name= request.POST['course_name']
+    #b.description= request.POST['description']
+    #b.save()
 
+    #description = Description.objects.get(id=request.session['id']).update(description=request.POST['description'])
+    #Course.objects.get(id=request.session['id']).update(course_name=request.POST['course_name'], description=description)
     
-    c = Description.objects.get(id=course_id)
-    c.description= request.POST['description']
-    c.save()
+    #Course.objects.filter(id=course_id).update(description=request.POST['description'])
+
     print "updating"
+    return redirect('/{}/courses'.format(id))
+
+def like(request, id, course_id):
+    course = Course.objects.get(id=course_id)
+    user = User.objects.get(id=request.session['id'])
+    course.likers.add(user)
+    return redirect('/{}/courses'.format(id))
+
+def unlike(request, id, course_id):
+    course = Course.objects.get(id=course_id)
+    user = User.objects.get(id=request.session['id'])
+    course.likers.remove(user)
     return redirect('/{}/courses'.format(id))
