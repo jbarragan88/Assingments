@@ -61,4 +61,25 @@ def creating(request, id):
         return redirect('/{}/courses'.format(id))
 
 def update(request, id, course_id):
-    return render(request, 'update.html')
+    user = User.objects.get(id=request.session['id'])
+    context = {
+        'user': user,
+        'course': Course.objects.get(id=course_id)
+    }
+    return render(request, 'update.html', context)
+
+def updating(request, id, course_id):
+    user = User.objects.get(id=request.session['id'])
+    all_courses = Course.objects.all()
+
+    #updating Course Name
+    b = Course.objects.get(id=course_id)
+    b.course_name= request.POST['course_name']
+    b.save()
+
+    
+    c = Description.objects.get(id=course_id)
+    c.description= request.POST['description']
+    c.save()
+    print "updating"
+    return redirect('/{}/courses'.format(id))
