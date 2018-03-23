@@ -6,5 +6,24 @@
         <h2>Courses</h2>
         <a href="/{{ user.id }}/add">Create Course</a>
         <a href="/{{ user.id }}">Home</a>
-    </body>
+        <table>
+            <tr>
+                <th>Course</th>
+                <th>Description</th>
+                <th>Creator</th>
+                <th>Actions</th>
+            </tr>
+            {% for course in all_courses %}
+            <tr>
+                <td><a href="">{{ course.course_name }}</a></td>
+                <td>{{ course.description.description }}|</td>
+                <td>|{{ course.creator.first_name }} {{ course.creator.last_name }}</td>
+                <td>
+                    <a href="/{{ user.id }}/{{ course.id }}/view">Show</a>
+                    <a href="/{{ user.id }}/{{ course.id}}/update">Edit</a>
+                    <a href="">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
 </html>

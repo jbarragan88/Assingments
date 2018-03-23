@@ -4,7 +4,14 @@
     </head>
     <body>
         <h2>Create</h2>
-        <form action="" method="post">
+        {% if messages %}
+			    <ul class="messages">
+    		    {% for message in messages %}
+    			    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    		    {% endfor %}
+             </ul>
+        {% endif %}
+        <form action="/{{ user.id }}/courses/creating" method="post">
                 {% csrf_token %}
             Course Name:
             <br>
@@ -12,7 +19,7 @@
             <br>
             Description:
             <br>
-            <textarea rows="4" cols="50" name="description" form="usrform"></textarea>
+            <textarea name="description" id="description"></textarea>
             <br>
             <input type="submit" value="Create">
         </form>

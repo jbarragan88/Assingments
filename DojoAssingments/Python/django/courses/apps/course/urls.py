@@ -3,7 +3,9 @@ from . import views
 urlpatterns = [
 
     url(r'^$', views.loggedin),
+    url(r'^courses/creating$', views.creating),
     url(r'^courses$', views.courses),
     url(r'^add$', views.add),
     url(r'^(?P<course_id>\d+)/view$', views.view),
+    url(r'^(?P<course_id>\d+)/update$', views.update),
 ]

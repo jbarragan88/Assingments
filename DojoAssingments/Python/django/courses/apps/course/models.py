@@ -11,9 +11,11 @@ class CourseManager(models.Manager):
         #validating Course name 
         if len(postData['name']) < 2 or postData['name'].isalpha():
             if len(postData['name']) < 2:
-                errors['first_name'] = "Course Name must contain more than 2 characters."
+                errors['name'] = "Course Name must contain more than 2 characters."
             if not postData['name'].isalpha():
-                errors['first_name_alpha'] = "Course Name must contain only characters."
+                errors['name_alpha'] = "Course Name must contain only characters."
+
+        return errors
 
 class Description(models.Model):
     description = models.TextField()
