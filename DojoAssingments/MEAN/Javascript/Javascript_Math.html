@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Javascript Math</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script>
+        //Math 1
+        /*function zero_negativity(arr){
+            let lowest = Math.min( ...arr );
+            console.log(lowest);
+            if ( Math.sign(lowest) == "-1" ){
+                return "False";
+            }
+            else{
+                return "True";
+            }
+            zero_negativity(arr, i+1);
+        }
+        //console.log(Math.sign(-5));
+        //console.log(Math.sign(5));
+        let log_it = zero_negativity([1,2,3,-4,5]);
+        console.log(log_it);*/
+
+        //Math 2
+        /*function is_even(num){
+            if(num%2 == 0){
+                return "True";
+            }
+            else{
+                return "False";
+            }
+        }
+        let result = is_even(4);
+        console.log(result);*/
+
+        //Math 3
+        /*function how_many_even(arr){
+            let counter = 0
+            for(let i = 0; i < arr.length; i++){
+                if(arr[i]%2 == 0){
+                counter += 1;
+                }
+            }
+            return counter;
+        }
+        let result = how_many_even([1,2,3,4,5]);
+        console.log(result);*/
+
+        //Math 4
+        /*function create_dummy_array(n){
+            let arr = [];
+            while( n > 0){
+                let random = Math.floor(Math.random() * 9);
+                //console.log(random)
+                arr.push(random);
+                n--
+            }
+            //console.log(arr);
+            return arr;
+        }
+        let yes = create_dummy_array(3)
+        console.log(yes);*/
+        //Math 5
+        function random_choice(arr){
+            let length = arr.length;
+            let random = Math.floor(Math.random() * length);
+            return arr[random];
+        }
+        let result = random_choice([3,5,7,9,10,353,25235,6742,22]);
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
