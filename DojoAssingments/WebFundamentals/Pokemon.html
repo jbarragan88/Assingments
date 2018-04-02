@@ -17,19 +17,24 @@
         $(document).ready(function(){
             var imagee = loop();
             $('#left').append(`${imagee}`); //retrives function then all the images from the pokemon api and appends them to the left
-            $('#left').on('click', 'img', function(){
-                $.get("http://pokeapi.co/api/v2/pokemon/"+[num]+"/", function(res){
-                    $("#right").append(`<h1>Bulbasaur</h1>
-                        ${imagee}
+
+            $('img').on('click', function(){
+              console.log(this)
+              var num = $(this).attr('id')
+              $.get("https://cors-anywhere.herokuapp.com/pokeapi.co/api/v2/pokemon/"+[num]+"/", function(res){
+                console.log(res)
+                console.log(res.name)
+                    $("p, h3, ul, #potato, h1").remove();
+                    $("#right").append(`<h1>${res.name}</h1>
+                        <img id="potato" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${res.id}.png">
                         <h3>Types</h3>
                         <ul>
-                            <li>poison</li>
-                            <li>grass</li>
+                            <li>${res.types[0].type.name}</li>
                         </ul>
                          <h3>height</h3>
-                        <p>7</p>
+                         <p>${res.height}</p>
                         <h3>Weight</h3>
-                        <p>69</p>`)
+                        <p>${res.weight}</p>`)
                 });
                 alert('You finally clicked');
             });
@@ -52,7 +57,7 @@
             border: 20px solid red;
             text-align: center;
         }
-    
+
     </style>
 </head>
 <body>
@@ -60,7 +65,7 @@
 
     </div>
     <div id="right">
-        <h1>Bulbasaur</h1>
+        <!--<h1>Bulbasaur</h1>
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png">
         <h3>Types</h3>
         <ul>
@@ -70,7 +75,7 @@
         <h3>height</h3>
         <p>7</p>
         <h3>Weight</h3>
-        <p>69</p>
+        <p>69</p>-->
     </div>
 </body>
 </html>
