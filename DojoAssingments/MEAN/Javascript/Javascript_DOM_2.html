@@ -24,20 +24,46 @@
 	// define draw table
 	function draw_table(){
 		// create our html string, open up the table tag
-		let html_string = "<table>";
+		var html_string = "<table>";
 		// outer loop
 		for(let i = 0; i<13; i++){
 			// create a row for each iteration of the outer loop
 			html_string += "<tr>";
+            if (i == 0){
+                for(let j = 0; j<13; j++){
+                    // first row
+                    if(j == 0){
+                        let nums = "X";
+                        let data = "<th>" + nums + "</th>";
+                        html_string += data;
+                        continue;
+                    }
+                    // calculate our number
+                    let nums = j;
+                    // attach our table data tags around the number
+                    let data = "<th>" + nums + "</th>";
+                    // add it to the html
+                    html_string += data;
+			    }
+            }
 			// inner loop
-			for(let j = 0; j<13; j++){
-				// calculate our number
-				let nums = i * j;
-				// attach our table data tags around the number
-				let data = "<td>" + nums + "</td>";
-				// add it to the html
-				html_string += data;
-			}
+            else{
+                for(let j = 0; j<13; j++){
+                    // let first column of every row go from 1 to 12
+                    if(j == 0){
+                        let nums = (j+1)*i;
+                        let data = "<td>" + nums + "</td>";
+                        html_string += data;
+                        continue;
+                    }
+                    // calculate our number
+                    let nums = i * j;
+                    // attach our table data tags around the number
+                    let data = "<td>" + nums + "</td>";
+                    // add it to the html
+                    html_string += data;
+			    }
+            }
 			// after the inner loop, we cap our table rows
 			html_string += "</tr>";
 		}
