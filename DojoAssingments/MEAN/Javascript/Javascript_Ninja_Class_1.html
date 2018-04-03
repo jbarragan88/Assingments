@@ -2,6 +2,7 @@
     <head>
         <title>Ninja Class 1</title>
         <script>
+//In ES5
 //Ninja Class 1
             /*function Ninja(name){
                 this.name = name;
@@ -25,7 +26,7 @@
             ninja1.drinkSake();
             ninja1.showStats();*/
 //Ninja Class 2
-            function Ninja(name){
+            /*function Ninja(name){
             this.name = name;
             this.health = 100
             const self = this;
@@ -69,8 +70,46 @@
             ninja1.showStats();
 
             ninja2.kick(ninja1)
-            ninja2.showStats();
+            ninja2.showStats();*/
+//In ES6
+            class Ninja{
+                constructor(name) {
+                    this.name = name;
+                    this.health = 100;
+                    this.speed = 3;
+                    this.strength = 3;
+                }
+                sayName() {
+                    return this.name;
+                }
+                showStats() {
+                    return "Name "+ this.name +" Health "+this.health + " Speed "+ this.speed +" Strength "+ this.strength;
+                }
+                drinkSake() {
+                    this.health += 5;
+                }
+            }
+            class Sensei extends Ninja{
+                constructor(name) {
+                    super(name);
+                    this.health = 200;
+                    this.speed = 10;
+                    this.strength = 10;
+                    this.wisdom = 10;
+                }
+                speakWisdom() {
+                this.drinkSake();
+                console.log("What one programmer can do in one month, two programmers can do in two months.")
+                }
+            }
+            const Ninja1 = new Ninja("DarkEvilNinjaXXXxx64646xxXXX");
+            //console.log(Ninja1.sayName());
+            //Ninja1.drinkSake;
+            //console.log(Ninja1.showStats);
 
+            const Sensei1 = new Sensei("DarkSensei38920");
+            Sensei1.speakWisdom();
+            console.log(Sensei1.showStats());
         </script>
     </head>
     <body>
