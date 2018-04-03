@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>Ninja Class 1</title>
+        <script>
+//Ninja Class 1
+            /*function Ninja(name){
+                this.name = name;
+                this.health = 100
+                const self = this;
+                const speed = 3;
+                const strength = 3;
+                this.sayName = function(){
+                    console.log("My ninja name is "+this.name+"!")
+                }
+                this.showStats = function(){
+                    console.log("Name: "+ this.name +", Health: "+ this.health +", Speed: "+ speed +", Strength: "+ strength)
+                }
+                this.drinkSake = function(){
+                    this.health += 10;
+                }
+            }
+
+            var ninja1 = new Ninja("Juan");
+            ninja1.sayName();
+            ninja1.drinkSake();
+            ninja1.showStats();*/
+//Ninja Class 2
+            function Ninja(name){
+            this.name = name;
+            this.health = 100
+            const self = this;
+            const speed = 3;
+            const strength = 3;
+            this.sayName = function(){
+                console.log("My ninja name is "+this.name+"!")
+            }
+            this.showStats = function(){
+                console.log("Name: "+ this.name +", Health: "+ this.health +", Speed: "+ speed +", Strength: "+ strength)
+            }
+            this.drinkSake = function(){
+                this.health += 10;
+            }
+            this.punch = function(other_ninja){
+                var test = other_ninja instanceof Ninja;
+                if(test === true){
+                this.health -= 5;
+                console.log(this.name +" was punched by "+ other_ninja.name +" and lost 5 health! BRUTAL!!!")
+                }
+                else{
+                console.log("Invalid punch.")
+                }
+            }
+            this.kick = function(other_ninja){
+                var test = other_ninja instanceof Ninja;
+                if(test === true){
+                this.health -= 15;
+                console.log(this.name +" was kicked by "+ other_ninja.name +" and lost 15 health! BRUTAL!!!")
+                }
+                else{
+                console.log("Invalid kick.")
+                }
+            }
+            }
+
+            var ninja1 = new Ninja("Juan");
+            var ninja2 = new Ninja("DARKEvilPuncher7382923");
+
+            ninja1.punch(ninja2)
+            ninja1.showStats();
+
+            ninja2.kick(ninja1)
+            ninja2.showStats();
+
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
