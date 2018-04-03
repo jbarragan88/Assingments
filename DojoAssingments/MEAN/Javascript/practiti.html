@@ -14,22 +14,41 @@
             console.log(sandwich.veggies[0]);
             // logging the first element of the array stored within the veggies property*/
             // here is an object literal with four key-value pairs
-            let sandwich = {
+            /*let sandwich = {
                 cheese: 'Smoked Gouda',
                 meat: 'Dry-aged Bison',
                 sauce: 'Chipotle Aioli',
                 veggies: 'Caramelized Onions'
             }
             // the variable 'topping' is used instead of an index
-            /*for(let topping in sandwich){
+            for(let topping in sandwich){
                 // when we log 'topping', we notice it's a key
                 console.log(topping);
                 // when we pass the key to the 'sandwich' object, we can pull values
                 console.log(sandwich[topping]);
-            }*/
+            }
             
             console.log(magicalUnicorns);
-            var magicalUnicorns = "awesome";
+            var magicalUnicorns = "awesome";*/
+            //console.log(this);
+            const MyObjConstructor = function(name) {
+                    const myPrivateVar = "Hello"; // just to show that it is hard to see this private var easily
+                    this.name = name; // but you can see the name!
+                    this.method = function() {
+                        console.log( "I am a method");
+                    };
+            }
+            const obj1 = new MyObjConstructor('object1');
+            const obj2 = new MyObjConstructor('object2');
+            obj1.newProperty = "newProperty!";
+            obj1.__proto__.anotherProperty = "anotherProperty!";
+            console.log(obj1.anotherProperty); // anotherProperty!
+            console.log(obj1.newProperty); // newProperty!
+            console.log(obj1);
+            // What about obj2?
+            console.log(obj2.newProperty); // undefined
+            console.log(obj2.anotherProperty); // anotherProperty! <= THIS IS THE COOL PART!
+
         </script>
     </head>
     <body>
