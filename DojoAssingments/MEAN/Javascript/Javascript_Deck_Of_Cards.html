@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>Javascript Deck Of Cards</title>
+        <script>
+            var suits = ["hearts", "clubs", "diamonds", "spades"];
+var values = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+
+
+//DECK OBJECT
+function Deck(){
+
+  this.cards = [];
+  
+  for(var suit in suits){
+    for(var value in values){
+      this.cards.push(" "+values[value]+ " - " +suits[suit]+", ");
+    }  
+  }
+  
+  this.shuffle = function(){
+    for(var idx = 0; idx < this.cards.length; idx++){
+      var random = Math.floor(Math.random()* this.cards.length);
+      var card = this.cards[idx];
+      this.cards[idx] = this.cards[random];
+      this.cards[random] = card;
+      // console.log(card);
+    }
+    // console.log("why won't this work!!");
+  };
+  
+  this.reset = function(){
+    this.cards = [];
+    for(var suit in suits){
+      for(var value in values){
+        this.cards.push(" "+values[value]+ " - " +suits[suit]+", ");
+      }
+    }
+    console.log("Reset")
+  };
+  
+  this.deal = function(){
+    //console.log(this.cards.length)
+    for(var i = this.cards.length-1; i >= 0; i--){
+      var card = this.cards[i];
+      //console.log(card);
+      //console.log(i+1 ,this.cards);
+      this.cards.pop();
+      //console.log("hello"+this.cards.length);
+      return card;
+    }
+    // console.log("hello"+this.cards.length);
+  };
+  
+}  
+
+//PLAYER
+function Player(name){
+  this.name = name;
+  this.hand = "";
+  this.points = 0;
+  this.grab_a_card = function(deck){
+    this.hand = deck.deal();
+    //console.log(this.hand);
+  };
+}
+
+
+var newDeck = new Deck();
+newDeck.shuffle();
+
+var a_card = newDeck.deal();
+var player1 = new Player("Jonathan");
+//console.log(newDeck.cards.length);
+
+player1.grab_a_card(newDeck);
+console.log(player1.hand);
+console.log(newDeck.cards.length);
+
+player1.grab_a_card(newDeck);
+console.log(player1.hand);
+console.log(newDeck.cards.length);
+
+player1.grab_a_card(newDeck);
+console.log(player1.hand);
+console.log(newDeck.cards.length);
+
+newDeck.reset();
+
+player1.grab_a_card(newDeck);
+console.log(player1.hand);
+console.log(newDeck.cards.length);
+// console.log(player1,player2)
+
+// console.log(newDeck);
+
+//newDeck.reset();
+//newDeck.deal();
+//console.log(newDeck.cards);
+//console.log(newDeck.cards.length);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
