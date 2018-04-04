@@ -3,6 +3,7 @@ module.exports = function (request, responce){
       index: function(request, response, fs) { 
           console.log(request.url);
           var url = request.url
+          //responding with a stylesheet
             if(url.indexOf('css') > -1){
               var the_url = request.url;
                 var responding = response.writeHead(200, {'Content-type': 'text/css'});
@@ -14,6 +15,7 @@ module.exports = function (request, responce){
               return responding;
             });
           }
+          //responding with and image
           else if(url.indexOf('img') > -1){
               var the_url = request.url;
               var responding = response.writeHead(200, {'Content-type': 'image/jpg'});
@@ -25,6 +27,7 @@ module.exports = function (request, responce){
               return responding;
             });
           }
+          //if it's not a stylesheet or image respond with and html file
           else{
             var the_url = request.url;
               var responding = response.writeHead(200, {'Content-type': 'text/html'});
