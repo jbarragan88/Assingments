@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Survey Form</title>
+    </head>
+    <body>
+        <h1>Survey Form</h1>
+        <form action="/student" method="post">
+            Name: <input type="text" name="name" id="name">
+            Dojo Location: 
+            <select name="location">
+                    <option value="Chicago">Chicago</option>
+                    <option value="Ayutla">Ayutla</option>
+                    <option value="Casa Blanca" selected>Cassa Blanca</option>
+            </select>
+            Favorite Language:
+            <select name="language">
+                    <option value="Python">Python</option>
+                    <option value="C#">C#</option>
+                    <option value="Node" selected>Node</option>
+            </select>
+            Comment(optional):
+            <textarea name="comment" id="comment" cols="30" rows="10">
+            </textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

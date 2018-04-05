@@ -17,10 +17,14 @@ app.use(session({secret: 'codingdojorocks'}));  // string for encryption
 // root route to render the index.ejs view
 app.get('/', function(req, res) {
     //req.session.counter = 0;
-    if (req.session.counter < 1){
-        req.session.counter = 0;
+    if (req.session.counter){
+        console.log('hello')
+        req.session.counter += 1;
     }
-    req.session.counter += 1;
+    else{
+        req.session.counter = 1;
+        console.log("Nooope")
+    }
     console.log(req.session.counter);
     res.render("index", {counter:req.session.counter});
 })
