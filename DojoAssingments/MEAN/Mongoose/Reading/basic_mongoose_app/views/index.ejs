@@ -1,0 +1,31 @@
+<html>
+<head>
+<title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript">
+         $(document). ready(function (){
+
+        })
+    </script>
+</head>
+<body>
+    <button>I AM A BUTTON!</button>
+    <!-- web page goes here -->
+    <<h2>Here are all the users:</h2>
+    <% for (var x in users) { %>
+        <h3>Name: <%= users[x].name %></h3>
+        <h4>Age: <%= users[x].age %></h4>
+        <hr>
+    <% } %>
+    <h1>Survey Form</h1>
+        <form action="/users" method="post" name="form">
+            Name: <input type="text" name="name" id="name">
+            Age: <input type="text" name="age" id="age">
+            <input type="submit" value="Submit">
+        </form>
+    <div id="message">
+
+    </div>
+</body>
+</html>
