@@ -1,0 +1,22 @@
+<html>
+<head>
+<title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript">
+         $(document). ready(function (){
+
+        })
+    </script>
+</head>
+<body>
+    <!-- web page goes here -->
+    <h1>Here are the awsome quotes!</h1>
+    <% for (var x in quotes) { %>
+        <h3>" <%= quotes[x].quote %> "</h3>
+        <h4>- <%= quotes[x].name %> at <%= quotes[x].date %></h4>
+        <hr>
+    <% } %>
+        <a href="/">Add to quotes!</a>
+</body>
+</html>
