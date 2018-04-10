@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Edit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Update Dog</h1>
+    <% for (x in dog) {%>
+    <form action="/dogs/<%= dog[x].id %>" method="post">
+    Name: <input type="text" name="name" id="name" value="<%= dog[x].name %>">
+    Age: <input type="text" name="age" id="age" value="<%= dog[x].age %>">
+    <input type="submit" value="Update!">
+    </form>
+    <% } %>
+    <a href="/">Home</a>
+</body>
+</html>

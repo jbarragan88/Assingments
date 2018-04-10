@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Dogs</h1>
+    <% for (x in dogs) {%>
+        <p>Name: <%= dogs[x].name %> Age: <%= dogs[x].age %> Created: <%= dogs[x].date %></p>
+        <a href="/dogs/<%= dogs[x].id %>">View</a>
+        <a href="/dogs/edit/<%= dogs[x].id %>">Update</a>
+        <a href="/dogs/destroy/<%= dogs[x].id %>">Delete</a>
+        <hr>
+    <% } %>
+    <a href="dogs/new">Create A New Dog</a>
+</body>
+</html>
