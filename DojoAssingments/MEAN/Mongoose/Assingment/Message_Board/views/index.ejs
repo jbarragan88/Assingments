@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Message Board</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>The Dojo Message Board</h1>
+    <form action="/message" method="post">
+        Name: <br>
+        <input type="text" name="name"> <br>
+        Message: <br>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        <input type="submit" name="Post Message" id="submit">
+    </form>
+    <br>
+    <br>
+    <h2>Messages</h2>
+    <% for (var x in messages) { %>
+        <h3>Name: <%= messages[x].name %></h3>
+        <h3>Message: <%= messages[x].message %></h3>
+        <h3>Comments</h3>
+            <% for (var i in comment) { %>
+                <p>Name:<%= comment[i].name %></p>
+                <p></p>
+            <% } %>
+        <hr>
+        <form action="/comment/<%= messages[x].id %>" method="post">
+            Name: <br>
+            <input type="text" name="name"> <br>
+            Comment: <br>
+            <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+            <input type="submit" name="Post Message" id="submit">
+        </form>
+    <% } %>
+</body>
+</html>
