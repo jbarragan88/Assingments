@@ -20,16 +20,17 @@
     <br>
     <br>
     <h2>Messages</h2>
-    <% for (var x in messages) { %>
-        <h3>Name: <%= messages[x].name %></h3>
-        <h3>Message: <%= messages[x].message %></h3>
+    <% for (var x of messages) { %>
+        <h3>Name: <%= x.name %></h3>
+        <h3>Message: <%= x.message %></h3>
         <h3>Comments</h3>
-            <% for (var i in comment) { %>
-                <p>Name:<%= comment[i].name %></p>
+            <% for (var i of x.comments) { %>
+                <p>Name:<%= i.name %></p>
+                <p>Comment:<%= i.text %></p>
                 <p></p>
             <% } %>
         <hr>
-        <form action="/comment/<%= messages[x].id %>" method="post">
+        <form action="/comment/<%= x.id %>" method="post">
             Name: <br>
             <input type="text" name="name"> <br>
             Comment: <br>
