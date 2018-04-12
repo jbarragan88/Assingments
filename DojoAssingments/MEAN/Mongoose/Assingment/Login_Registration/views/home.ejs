@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Home</title>
+    </head>
+    <body>
+        <h1><%= user.last_name %>, <%= user.first_name %></h1>
+        <h2>Information</h2>
+        <ul>
+            <li>First Name: <%= user.first_name %></li>
+            <li>Last Name: <%= user.last_name %></li>
+            <li>Email: <%= user.email %></li>
+            <li>Birthday: <%= user.birthday %></li>
+        </ul>
+        <a href="/logout">Log Out</a>
+    </body>
+</html>

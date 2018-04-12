@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Sign Up</title>
+    </head>
+    <body>
+        <h1>Registration</h1>
+        <% if(typeof(errors) != 'undefined' ) { %>
+            <% for (var x in errors) { %>
+             <h3><%= errors[x].message %></h3>
+            <% } %>
+        <% } %>
+        <form action="/register" method="post">
+            Email: <input type="text" name="email"> <br>
+            First Name: <input type="text" name="first_name"> <br>
+            Last Name: <input type="text" name="last_name"> <br>
+            Password: <input type="password" name="password"> <br>
+            Confirm Password: <input type="password" name="password_confirm"> <br>
+            Birthday: <input type="date" name="birthday"> <br>
+            <input type="submit" value="Register">
+        </form>
+        <h1>Login</h1>
+        <form action="/login" method="post">
+            Email: <input type="text" name="email"> <br>
+            Password: <input type="password" name="password"> <br>
+            <input type="submit" value="Register">
+        </form>
+    </body>
+</html>
