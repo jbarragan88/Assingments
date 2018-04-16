@@ -15,7 +15,6 @@ export class HttpService {
 
   intPokemon(){
     let intbulbasaur = this._http.get('https://pokeapi.co/api/v2/pokemon/1/');
-    //for(var x = 0; x <  data['types'].length; x++){
       intbulbasaur.subscribe(data => 
         
         { 
@@ -27,7 +26,6 @@ export class HttpService {
 
   numberType(){
     let poison = this._http.get('https://pokeapi.co/api/v2/pokemon/10/');
-    //for(var x = 0; x <  data['types'].length; x++){
       poison.subscribe(data => 
         
         { 
