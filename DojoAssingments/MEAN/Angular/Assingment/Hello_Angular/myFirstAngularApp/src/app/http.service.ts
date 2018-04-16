@@ -20,6 +20,27 @@ export class HttpService {
     //tempObservable.subscribe(data => console.log("Got our tasks!", data));
     return this._http.get(`/`+title);
   }
+  createTask(task, description){
+    //let tempObservable = this._http.get('/tsk');
+    //tempObservable.subscribe(data => console.log("Got our tasks!", data));
+    return this._http.get(`/task/`+task+`/`+description);
+  }
+  deleteTask(id){
+    //let tempObservable = this._http.get('/tsk');
+    //tempObservable.subscribe(data => console.log("Got our tasks!", data));
+    console.log("Service ts id:", id)
+    return this._http.get(`/remove/`+id);
+  }
+  findTask(id){
+    //let tempObservable = this._http.get('/tsk');
+    //tempObservable.subscribe(data => console.log("Got our tasks!", data));
+    console.log("Service ts id:", id)
+    return this._http.get(`/find/`+id);
+  }
+  updateTask(data){
+    console.log("Updating data:", data)
+    return this._http.get(`/update/`+data._id+`/`+data.title+`/`+data.description);
+  }
 
   //addTask(){
     //let addingObservable = this._http.get('/task/Eaaaaaaat');

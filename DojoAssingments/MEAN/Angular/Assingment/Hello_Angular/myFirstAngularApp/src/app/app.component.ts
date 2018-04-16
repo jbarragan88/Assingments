@@ -11,13 +11,14 @@ export class AppComponent implements OnInit {
   tasks = [];
   task : any;
   gotTask = [];
+  updateTask : any;
 
   constructor(private _httpService: HttpService){
     
   }
   ngOnInit(){
     //this.onButtonGetTasks()
-    this.task = {title: ""}
+    this.task = {title: "", description: ""}
   }
   //getTasks(){
     //let observable = this._httpService.getTasks()
@@ -27,26 +28,57 @@ export class AppComponent implements OnInit {
     //})
   //}
   onButtonGetTasks(): void {
+    console.log("anythimg")
     let observable = this._httpService.getTasks()
     observable.subscribe(data => {
       console.log("Data Received", data)
       this.tasks = data['data'];
   })
   }
+
   getTask() {
-    //let observable = this._httpService.getTask(title:"")
-    //observable.subscribe(data => {
-      //console.log("Task Received", data)
-      //this.task = {title: ""};
       console.log(this.task.title)
       let observable = this._httpService.getTask(this.task.title)
       observable.subscribe(data => {
       console.log("Task Received", data)
-      this.gotTask = data['data'];
+      this.gotTask = data['data']
   })
   }
-  
 
+  createTask() {
+      console.log(this.task.title)
+      let observable = this._httpService.createTask(this.task.title, this.updateTask)
+      observable.subscribe(data => {
+      console.log("Task Created", data)
+      this.tasks = data['data'];
+  })
+  }
+  updatingTask() {
+      console.log(this.task.title)
+      let observable = this._httpService.updateTask(this.updateTask)
+      observable.subscribe(data => {
+      console.log("Task Created", data)
+      this.tasks = data['data'];
+  })
+  }
+  onButtonBeginUpdateTask(id){
+    console.log(`Click event is working and id is: ${id}`)
+    let observable = this._httpService.findTask(id)
+    observable.subscribe(data => {
+      console.log("A Task", data)
+      this.updateTask = data['data']
+  })
+  }
+  onButtonDeleteTask(id){
+    console.log(`Click event is working and id is: ${id}`)
+    let observable = this._httpService.deleteTask(id)
+    observable.subscribe(data => {
+      console.log("Task Created", data)
+  })
+  }
+//
+//
+//
   onButtonClick(): void {
     console.log(`Click event is working`);
   }

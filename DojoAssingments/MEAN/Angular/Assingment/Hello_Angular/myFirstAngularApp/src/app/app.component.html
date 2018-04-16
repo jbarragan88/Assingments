@@ -21,19 +21,50 @@
 <!--<p *ngFor="let task of tasks">{{ task.title }}</p>
 <h1> {{ tasks }}</h1>
 tasks[task].title-->
+
+<h1>New Task</h1>
+<form (submit)="createTask()" class="postForm">
+    <p>{{task | json}}</p>
+    <input type="text" name="task.title" [(ngModel)]="task.title">
+    <input type="text" name="task.description" [(ngModel)]="task.description">
+    <input type="submit" value="Create Task">
+</form>
+
+<br>
+
 <div *ngIf="tasks.length > 0">
 <h1>For loop of tasks in an Unordered List</h1>
 <ul *ngFor="let task of tasks">
-  <li>{{ task.title }}, {{ task.description }}, The ID: {{ task._id }}</li>
+  <li>Title: {{ task.title }}, Description: {{ task.description }}, ID#: {{ task._id }} || 
+    <button (click)="onButtonDeleteTask( task._id )">Delete</button> <button (click)="onButtonBeginUpdateTask( task._id )">Update</button></li>
 </ul>
 </div>
+
 <button (click)="onButtonGetTasks()">Click to get all tasks</button>
+
+<div *ngIf="updateTask">
+    <h1>It Works?</h1>
+    <p>{{ updateTask.description }}, , , , {{ updateTask.title }}</p>
+    <form (submit)="updatingTask()" class="postForm">
+        <p>{{updateTask | json}}</p>
+        <input type="text" name="task.title" [(ngModel)]="updateTask.title"  >
+        <input type="text" name="task.description" [(ngModel)]="updateTask.description">
+        <input type="submit" value="Update Task">
+      </form>
+</div>
+
+<hr>
+
 <br>
+
+<br>
+
   <form (submit)="getTask()" class="postForm">
     <p>{{task | json}}</p>
     <input type="text" name="task.title" [(ngModel)]="task.title">
     <input type="submit" value="Get Task">
   </form>
+
 <br>
 <div *ngIf="gotTask.length > 0">
   <h1>Task</h1>
@@ -41,7 +72,12 @@ tasks[task].title-->
     <li>{{ onetask.title }}, {{ onetask.description }}, {{ onetask._id }}</li>
   </ul>
   </div>
+<hr>
+
 <br>
+
+<br>
+
 <button (click)="onButtonClick()">Has Click Aqui</button>
 <button (click)="onButtonClickParam(5)">Click me!</button>
 <button (click)="onButtonClickParams(5, 'hello')">Has Hello Click</button>

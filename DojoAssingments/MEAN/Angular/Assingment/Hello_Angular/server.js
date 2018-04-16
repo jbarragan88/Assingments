@@ -76,8 +76,9 @@ app.get('/tsk', function(req, res) {
       })
 })
 //creat new task
-app.get('/task/:title', function(req, res) {
-    var task = new Task({title: req.params.title});
+app.get('/task/:title/:description', function(req, res) {
+    console.log("Creating ...", req.params.title)
+    var task = new Task({title: req.params.title, description: req.params.description});
     task.save(function(err){
         if(err){
             console.log("Returned error", err);
@@ -92,6 +93,7 @@ app.get('/task/:title', function(req, res) {
 })
 //delete task
 app.get('/remove/:id', function(req, res) {
+    console.log("node remove id:", req.params.id)
     Task.find({_id: req.params.id}, function(err, tasks) { 
         Task.remove({_id: req.params.id}, function(err){
             if(err){
@@ -106,35 +108,37 @@ app.get('/remove/:id', function(req, res) {
       })
 })
 //update/task
-app.post('/update/:id', function(req, res) {
+app.get('/update/:id/:title/:description',  function(req, res) {
+    console.log("The Title?:", req.params.title)
     Task.find({_id: req.params.id}, function(err, tasks) { 
-        Task.update({_id: req.params.id}, {$set: {title: req.body.title, description: req.body.description,completed: req.body.completed}}, function(err, task){
+        Task.update({_id: req.params.id}, {$set: {title: req.params.title, description: req.params.description,completed: req.body.completed}}, function(err, task){
             var id = req.params.id;
             if(err){
-                res.redirect('/')
+                res.json({message: "Error", error: err})
             }
             else{
                 console.log(task);
-                res.redirect('/'+id)
+                res.json({message: "Success", data: tasks})
             }
         });
       })
 })
 
 //view task
-//app.get('/:id', function(req, res) {
-    //Task.find({_id: req.params.id}, function(err, tasks) { 
-        //if(err){
-            //console.log("Wasn't able to retrive shit from the database. I'm Done...")
-            //res.json({message: "Error", error: err})
-        //}
-        //else{
-            //console.log(tasks);
-            //var tasks_array = tasks;
-            //res.json({message: "Success", data: tasks_array})
-        //}
-      //})
-//})
+app.get('/find/:id', function(req, res) {
+    console.log("HERERERERERERE")
+    Task.findOne({_id: req.params.id}, function(err, tasks) { 
+        if(err){
+            console.log("Wasn't able to retrive shit from the database. I'm Done...")
+            res.json({message: "Error", error: err})
+        }
+        else{
+            console.log(tasks);
+            var tasks_array = tasks;
+            res.json({message: "Success", data: tasks_array})
+        }
+      })
+})
 app.get('/:title', function(req, res) {
     console.log("this is the parameter", req.params.title)
     Task.find({title: req.params.title}, function(err, tasks) { 
