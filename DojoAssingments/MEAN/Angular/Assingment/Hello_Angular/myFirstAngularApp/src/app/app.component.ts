@@ -9,20 +9,43 @@ import { HttpService } from './http.service';
 export class AppComponent implements OnInit {
   title = 'MEAN';
   tasks = [];
+  task : any;
+  gotTask = [];
 
   constructor(private _httpService: HttpService){
     
   }
   ngOnInit(){
-    this.getTasks()
+    //this.onButtonGetTasks()
+    this.task = {title: ""}
   }
-  getTasks(){
+  //getTasks(){
+    //let observable = this._httpService.getTasks()
+    //observable.subscribe(data => {
+      //console.log("Data Received", data)
+      //this.tasks = data['data'];
+    //})
+  //}
+  onButtonGetTasks(): void {
     let observable = this._httpService.getTasks()
     observable.subscribe(data => {
       console.log("Data Received", data)
       this.tasks = data['data'];
-    })
+  })
   }
+  getTask() {
+    //let observable = this._httpService.getTask(title:"")
+    //observable.subscribe(data => {
+      //console.log("Task Received", data)
+      //this.task = {title: ""};
+      console.log(this.task.title)
+      let observable = this._httpService.getTask(this.task.title)
+      observable.subscribe(data => {
+      console.log("Task Received", data)
+      this.gotTask = data['data'];
+  })
+  }
+  
 
   onButtonClick(): void {
     console.log(`Click event is working`);

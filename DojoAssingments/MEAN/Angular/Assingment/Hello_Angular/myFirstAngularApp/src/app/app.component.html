@@ -18,13 +18,30 @@
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul>
-<p *ngFor="let task of tasks">{{ task.title }}</p>
-<!--<h1> {{ tasks }}</h1>
+<!--<p *ngFor="let task of tasks">{{ task.title }}</p>
+<h1> {{ tasks }}</h1>
 tasks[task].title-->
+<div *ngIf="tasks.length > 0">
 <h1>For loop of tasks in an Unordered List</h1>
 <ul *ngFor="let task of tasks">
-  <li>{{ task.title }}</li>
+  <li>{{ task.title }}, {{ task.description }}, The ID: {{ task._id }}</li>
 </ul>
+</div>
+<button (click)="onButtonGetTasks()">Click to get all tasks</button>
+<br>
+  <form (submit)="getTask()" class="postForm">
+    <p>{{task | json}}</p>
+    <input type="text" name="task.title" [(ngModel)]="task.title">
+    <input type="submit" value="Get Task">
+  </form>
+<br>
+<div *ngIf="gotTask.length > 0">
+  <h1>Task</h1>
+  <ul *ngFor="let onetask of gotTask">
+    <li>{{ onetask.title }}, {{ onetask.description }}, {{ onetask._id }}</li>
+  </ul>
+  </div>
+<br>
 <button (click)="onButtonClick()">Has Click Aqui</button>
 <button (click)="onButtonClickParam(5)">Click me!</button>
 <button (click)="onButtonClickParams(5, 'hello')">Has Hello Click</button>

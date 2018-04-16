@@ -49,7 +49,7 @@ app.get('/', function(req, res) {
     // This is where we will retrieve the dogs from the database and include them in the view page we will be rendering.
     Task.find({}, function(err, tasks) { 
         if(err){
-            console.log("Wasn't able to retrive shit from the database. I'm Done...")
+            console.log("First Route: Wasn't able to retrive shit from the database. I'm Done...")
             res.json({message: "Error", error: err})
         }
         else{
@@ -122,10 +122,24 @@ app.post('/update/:id', function(req, res) {
 })
 
 //view task
-app.get('/:id', function(req, res) {
-    Task.find({_id: req.params.id}, function(err, tasks) { 
+//app.get('/:id', function(req, res) {
+    //Task.find({_id: req.params.id}, function(err, tasks) { 
+        //if(err){
+            //console.log("Wasn't able to retrive shit from the database. I'm Done...")
+            //res.json({message: "Error", error: err})
+        //}
+        //else{
+            //console.log(tasks);
+            //var tasks_array = tasks;
+            //res.json({message: "Success", data: tasks_array})
+        //}
+      //})
+//})
+app.get('/:title', function(req, res) {
+    console.log("this is the parameter", req.params.title)
+    Task.find({title: req.params.title}, function(err, tasks) { 
         if(err){
-            console.log("Wasn't able to retrive shit from the database. I'm Done...")
+            console.log("By Task: Wasn't able to retrive shit from the database. I'm Done...")
             res.json({message: "Error", error: err})
         }
         else{

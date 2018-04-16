@@ -15,11 +15,16 @@ export class HttpService {
     //tempObservable.subscribe(data => console.log("Got our tasks!", data));
     return this._http.get('/tsk');
   }
-
-  addTask(){
-    let addingObservable = this._http.get('/task/Eaaaaaaat');
-    addingObservable.subscribe(data => console.log("Added task!", data));
+  getTask(title){
+    //let tempObservable = this._http.get('/tsk');
+    //tempObservable.subscribe(data => console.log("Got our tasks!", data));
+    return this._http.get(`/`+title);
   }
+
+  //addTask(){
+    //let addingObservable = this._http.get('/task/Eaaaaaaat');
+    //addingObservable.subscribe(data => console.log("Added task!", data));
+  //}
 
   //deleteTask(){
     //let deletingObservable = this._http.get('/remove/5acce3907a7ee62fac221592');

@@ -30,7 +30,7 @@ app.get('/', function(req, res) {
     // This is where we will retrieve the dogs from the database and include them in the view page we will be rendering.
     Task.find({}, function(err, tasks) { 
         if(err){
-            console.log("Wasn't able to retrive shit from the database. I'm Done...")
+            console.log("First Route: Wasn't able to retrive shit from the database. I'm Done...")
             res.json({message: "Error", error: err})
         }
         else{
@@ -56,20 +56,20 @@ app.post('/task', function(req, res) {
     
 })
 //delete task
-app.get('/remove/:id', function(req, res) {
-    Task.find({_id: req.params.id}, function(err, tasks) { 
-        Task.remove({_id: req.params.id}, function(err){
-            if(err){
-                console.log("Wasn't able to delete shit from the database. I'm Done...")
-                res.redirect('/')
-            }
-            else{
-                console.log('Killing one task at a time')
-                res.redirect('/')
-            }
-        })
-      })
-})
+//app.get('/remove/:id', function(req, res) {
+    //Task.find({_id: req.params.id}, function(err, tasks) { 
+        //Task.remove({_id: req.params.id}, function(err){
+            //if(err){
+                //console.log("Wasn't able to delete shit from the database. I'm Done...")
+                //res.redirect('/')
+            //}
+            //else{
+                //console.log('Killing one task at a time')
+                //res.redirect('/')
+            //}
+        //})
+      //})
+//})
 //update/task
 app.post('/update/:id', function(req, res) {
     Task.find({_id: req.params.id}, function(err, tasks) { 
@@ -86,11 +86,26 @@ app.post('/update/:id', function(req, res) {
       })
 })
 
-//view task
-app.get('/:id', function(req, res) {
-    Task.find({_id: req.params.id}, function(err, tasks) { 
+//view task by id
+//app.get('/:id', function(req, res) {
+    //Task.find({_id: req.params.id}, function(err, tasks) { 
+        //if(err){
+           // console.log("Wasn't able to retrive shit from the database. I'm Done...")
+            //res.json({message: "Error", error: err})
+        //}
+       // else{
+         //   console.log(tasks);
+         //   var tasks_array = tasks;
+         //   res.json({message: "Success", data: tasks_array})
+//}
+     // })
+//})
+//view task by title
+app.get('/:title', function(req, res) {
+    console.log("testing",req.params.title);
+    Task.findOne({title: req.params.title}, function(err, tasks) { 
         if(err){
-            console.log("Wasn't able to retrive shit from the database. I'm Done...")
+            console.log("Wrong Title: Wasn't able to retrive shit from the database. I'm Done...")
             res.json({message: "Error", error: err})
         }
         else{
