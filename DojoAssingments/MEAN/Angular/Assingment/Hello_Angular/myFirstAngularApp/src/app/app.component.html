@@ -19,7 +19,15 @@
   </li>
 </ul>
 <p *ngFor="let task of tasks">{{ task.title }}</p>
-<h1> {{ tasks }}</h1>
-<!--tasks[task].title-->
+<!--<h1> {{ tasks }}</h1>
+tasks[task].title-->
+<h1>For loop of tasks in an Unordered List</h1>
+<ul *ngFor="let task of tasks">
+  <li>{{ task.title }}</li>
+</ul>
+<button (click)="onButtonClick()">Has Click Aqui</button>
+<button (click)="onButtonClickParam(5)">Click me!</button>
+<button (click)="onButtonClickParams(5, 'hello')">Has Hello Click</button>
+<button (click)="onButtonClickEvent($event)">Evento??</button>
 </div>
 
