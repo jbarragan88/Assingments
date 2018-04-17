@@ -9,7 +9,7 @@ import { HttpService } from '../http.service';
 })
 export class ChicagoComponent implements OnInit {
   weather: any;
-  city = "Burbank";
+  city = "Chicago";
   temp: any;
   tempHigh: any;
   tempLow: any;
