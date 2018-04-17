@@ -3,13 +3,13 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { HttpService } from '../http.service';
 
 @Component({
-  selector: 'app-gamma',
-  templateUrl: './gamma.component.html',
-  styleUrls: ['./gamma.component.css']
+  selector: 'app-chicago',
+  templateUrl: './chicago.component.html',
+  styleUrls: ['./chicago.component.css']
 })
-export class GammaComponent implements OnInit {
+export class ChicagoComponent implements OnInit {
   weather: any;
-  city = "San Jose";
+  city = "Burbank";
   temp: any;
   tempHigh: any;
   tempLow: any;
@@ -34,4 +34,5 @@ export class GammaComponent implements OnInit {
       return this.weather;
     })
   }
+
 }

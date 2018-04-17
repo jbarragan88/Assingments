@@ -25,8 +25,8 @@ app.use(express.static( __dirname + '/routingApp/dist' ));
 //*
 // Routes
 // Root Request
-//Show all tasks
 app.all("*", (req,res,next) => {
+    console.log("to the back you go")
     res.sendFile(path.resolve("./public/dist/index.html"))
 });
 

@@ -3,13 +3,13 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { HttpService } from '../http.service';
 
 @Component({
-  selector: 'app-gamma',
-  templateUrl: './gamma.component.html',
-  styleUrls: ['./gamma.component.css']
+  selector: 'app-burbank',
+  templateUrl: './burbank.component.html',
+  styleUrls: ['./burbank.component.css']
 })
-export class GammaComponent implements OnInit {
+export class BurbankComponent implements OnInit {
   weather: any;
-  city = "San Jose";
+  city = "Burbank";
   temp: any;
   tempHigh: any;
   tempLow: any;
@@ -26,12 +26,16 @@ export class GammaComponent implements OnInit {
       console.log("Data Received", data)
       console.log("San Jose's Data:", data)
       this.weather = data['city'];
-      this.temp = (data['list'][0]['main']['temp']);
-      this.tempHigh = (data['list'][0]['main']['temp_max']);
-      this.tempLow = (data['list'][0]['main']['temp_min']);
+      this.temp = this.fahrenheit(data['list'][0]['main']['temp']);
+      this.tempHigh = this.fahrenheit(data['list'][0]['main']['temp_max']);
+      this.tempLow = this.fahrenheit(data['list'][0]['main']['temp_min']);
       this.status = (data['list'][0]['weather'][0]['description']);
       console.log(this.weather)
       return this.weather;
     })
   }
+  fahrenheit(temp){
+    return Math.floor((9/5)*(temp - 273) + 32)
+  }
+
 }
