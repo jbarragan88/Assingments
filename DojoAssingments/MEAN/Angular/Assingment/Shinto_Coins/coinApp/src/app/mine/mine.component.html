@@ -2,8 +2,16 @@
 <hr>
 <h3>Here you can mine ShintoCoins by being the firs to solve the algorithm:</h3>
 
-<p>{{ algorithm }}</p>
-<form action="">
-  <input type="text" name="answer" id="answer">
+<div *ngIf="result">
+  <h3>{{ result }}</h3>
+</div>
+{{userCoins}}
+<div *ngIf="pregunta">
+    <p>{{ pregunta.question }}</p>
+</div>
+{{algorithm}}
+<form (submit)="checkAnswer()" class="postForm">
+    <p>{{userAnswer | json}}</p>
+  <input type="text" name="userAnswer" [(ngModel)]="userAnswer">
   <input type="submit" value="Mine">
 </form>

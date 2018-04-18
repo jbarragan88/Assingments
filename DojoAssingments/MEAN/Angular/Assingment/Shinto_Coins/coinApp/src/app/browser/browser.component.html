@@ -1,3 +1,21 @@
-<p>
-  browser works!
-</p>
+<h1>Browse the Ledger</h1>
+<h3>Here you can browse all ShintoCoin transactions.</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Amount</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let info of userHistory[0]">
+    <tr>
+      <td>{{ info.Action }}  </td>
+      <td>{{ info.Amount }}</td>
+      <td>{{ info.Value }}</td>
+      <td>{{ info.Id}}</td>
+      <td><button [routerLink]="['../details/'+info.Id]"> Details</button></td>
+    </tr>
+  </tbody>
+</table>
+<router-outlet></router-outlet>

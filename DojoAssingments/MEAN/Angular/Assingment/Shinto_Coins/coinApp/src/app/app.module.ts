@@ -12,6 +12,8 @@ import { BrowserComponent } from './browser/browser.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from './http.service';
+import { FormsModule } from '@angular/forms';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { HttpService } from './http.service';
     MineComponent,
     BuyComponent,
     SellComponent,
-    BrowserComponent
+    BrowserComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

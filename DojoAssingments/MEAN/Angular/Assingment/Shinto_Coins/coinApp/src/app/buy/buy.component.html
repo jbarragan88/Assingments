@@ -1,3 +1,12 @@
-<p>
-  buy works!
-</p>
+<h1>Buy ShintoCoins</h1>
+
+<h3>Current ShintoCoin Value: $ {{ coinValue }}</h3>
+<h3>Number of ShintoCoins Owned: {{ userCoins }}</h3>
+<div *ngIf="bought">
+    <h3>{{ bougth }}</h3>
+  </div>
+<form (submit)="userBuying()" class="postForm">
+    <p>{{userBuy | json}}</p>
+  <input type="text" name="userBuy" [(ngModel)]="userBuy">
+  <input type="submit" value="Buy">
+</form>
