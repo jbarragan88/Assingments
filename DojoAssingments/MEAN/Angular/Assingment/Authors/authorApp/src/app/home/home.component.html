@@ -11,10 +11,10 @@
       <th>Actions available</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody *ngFor="let author of Authors">
     <tr>
-      <td>Author Name --</td>
-      <td>Edit || Delete</td>
+      <td>{{ author.Name }} --</td>
+      <td><button [routerLink]="['../edit/'+author._id]"> Edit</button> || <button (click)="authorDelete(author._id)">Delete</button> </td>
     </tr>
   </tbody>
 </table>

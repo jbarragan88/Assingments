@@ -1,3 +1,12 @@
 <p>
   edit works!
 </p>
+<button [routerLink]="['../home']">Home</button>
+<p>Edit This author</p>
+<h3 *ngIf="error"> {{ error }}</h3>
+<form (submit)="editAuthor()" class="postForm">
+    <p>{{ authorName | json}}</p>
+  <input type="text" name="name" [(ngModel)]="authorName.name" id="name">
+  <button [routerLink]="['../home']">Cancel</button>
+  <input type="submit" value="Add Author">
+</form>

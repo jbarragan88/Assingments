@@ -10,6 +10,7 @@ import { AppModule } from '../app.module';
 })
 export class CreateComponent implements OnInit {
  authorName = {name: ""};
+ error = {bad: ""};
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
@@ -24,6 +25,13 @@ export class CreateComponent implements OnInit {
     let observable = this._httpService.addAuthor(this.authorName);
       observable.subscribe(data => {
         console.log("Data Received:", data);
+        if(data['messagee'] == "Error"){
+          this.error.bad = data['data']['message'];
+          console.log("Create Component Error:", this.error.bad);
+        }
+        else{
+          this._router.navigate(['/home']);
+        }
       })
   }
 

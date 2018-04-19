@@ -4,6 +4,7 @@
 <button [routerLink]="['../home']">Home</button>
 <p>Add a new author:</p>
 <hr>
+<h3 *ngIf="error.bad">Name Needs To Be Longer Than 3 Characters</h3>
 <form (submit)="addAuthor()" class="postForm">
   <p>{{ authorName | json}}</p>
   <input type="text" name="name" [(ngModel)]="authorName.name" id="name">

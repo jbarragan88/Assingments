@@ -41,18 +41,77 @@ app.use(bodyParser.urlencoded({extended: true}));
 // Routes
 // Root Request
 app.post('/api/add', function(req, res){
-    console.log("HEHRHE", req.body.name);
+    console.log("Server Add Author", req.body.name);
     var author = new Author({Name: req.body.name})
     author.save(function(err){
         if(err){
-            res.json({data: err})
+            res.json({messagee: "Error", data: err})
         }
         else{
-            res.json({data: "made it"})
+            res.json({messagee: "Success", data: "made it"})
         }
     })
-    console.log("Server Add Author", author);
-    //res.json({data: "received"})
+    console.log("Server Added Author", author);
+});
+
+app.post('/api/edit/:id', function(req, res){
+    if(req.body.name.length < 4){
+        res.json({messagee: "Error"})
+    }
+    else{
+        console.log("Server the param id:", req.params.id)
+        Author.update({_id: req.params.id}, {$set: {Name: req.body.name}}, function(err, author){
+            if(err){
+                console.log("ERROROROROROR")
+                res.json({messagee: "Error", data: err})
+            }
+            else{
+                console.log("SUCESEESEECESCESSSS")
+                res.json({messagee: "Success", data: "made it"})
+            }
+        })
+    }
+});
+
+app.get('/api/find/:id', function(req, res){
+    Author.findOne({_id: req.params.id}, function(err, author){ 
+        if(err){
+            console.log("Server Finding Author error:", err)
+        }
+        else{
+            res.json({data: author});
+        }
+    })
+
+});
+
+app.get('/api/findAll', function(req, res){
+
+    Author.find({}, function(err, authors) {
+        if(err){
+            console.log("The server was not able to find shit..", err);
+            res.json({message: "Error", error: err});
+        }
+        else{
+            console.log("Successful On Finding Authors", authors);
+            res.json({message: "Success", data: authors});
+        }
+    })
+});
+
+app.get('/api/delete/:id', function(req, res){
+    Author.find({_id: req.params.id}, function(err, author){
+        if(err){
+            console.log("Server Didn't Find author to delete", err);
+            res.jason({message: "Error"});
+        }
+        else{
+            console.log("Server Found author to delete", author);
+            Author.remove({_id: req.params.id}, function(err){
+                res.json({message: "Success"});
+            })
+        }
+    })
 });
 
 app.all("*", (req,res,next) => {
