@@ -23,6 +23,7 @@ export class DetailsComponent implements OnInit {
     this.sub = this._route.params.subscribe(params => {
       this.id = +params['id']
     })
+    
     let observable = this._httpService.getDetail(this.id);
     observable.subscribe(data => {
       console.log("Data Received:", data);

@@ -1,0 +1,12 @@
+<p>
+  create works!
+</p>
+<button [routerLink]="['../home']">Home</button>
+<p>Add a new author:</p>
+<hr>
+<form (submit)="addAuthor()" class="postForm">
+  <p>{{ authorName | json}}</p>
+  <input type="text" name="name" [(ngModel)]="authorName.name" id="name">
+  <button [routerLink]="['../home']">Cancel</button>
+  <input type="submit" value="Add Author">
+</form>
