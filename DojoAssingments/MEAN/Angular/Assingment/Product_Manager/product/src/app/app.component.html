@@ -1,0 +1,20 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container-fluid">
+<div class="jumbotron">
+    <h1>PPM - Project Product Management</h1>
+    <P>Where Your Products Begin</P>
+</div>
+
+<ul class="nav justify-content-end">
+        <li class="nav-item">
+            <button [routerLink]="['home']" class="btn btn-primary, nav-link" >Home</button>
+        </li>
+        <li class="nav-item">
+            <button [routerLink]="['list']" class="btn btn-primary, nav-link">Product List</button>
+        </li>
+        <li class="nav-item">
+            <button [routerLink]="['create']" class="btn btn-primary, nav-link">Product Creation</button>
+        </li>
+      </ul>
+<router-outlet></router-outlet>
+</div>

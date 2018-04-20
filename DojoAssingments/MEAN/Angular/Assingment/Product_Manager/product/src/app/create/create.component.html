@@ -1,0 +1,25 @@
+<div class="container">
+<h1> Create a New Product</h1>
+<h3 *ngIf="error.title">Name Needs To Be Longer Than 3 Characters</h3>
+<h3 *ngIf="error.price">Price Required</h3>
+<form (submit)="addProduct()" class="postForm">
+    <div class="form-group">
+        <p>{{ product| json}}</p>
+        <label for="exampleInputEmail1">Title:</label>
+        <input type="text" name="title" [(ngModel)]="product.title" id="title" class="form-control">
+        <small id="emailHelp" class="form-text text-muted">Title Should Be Longer Than 4 Characters.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Price:</label>
+        <input type="text" name="price" [(ngModel)]="product.price" id="price">
+        <small id="emailHelp" class="form-text text-muted">Price Required.</small>
+    </div>
+    <div class="form-group">
+            <label for="exampleInputEmail1">Image Url:</label>
+        <input type="text" name="image" [(ngModel)]="product.image" id="image">
+        <small id="emailHelp" class="form-text text-muted">Image Is Not Required.</small>
+    </div>
+        <button [routerLink]="['../home']" class="btn btn-primary">Cancel</button>
+        <input [disabled]="product.title.length < 4 || product.price == 0 || !product.price"type="submit" value="Create" class="btn btn-primary">
+</form>
+</div>

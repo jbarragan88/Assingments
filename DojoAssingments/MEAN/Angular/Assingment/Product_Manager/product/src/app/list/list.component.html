@@ -1,0 +1,15 @@
+<div class="cotainer">
+<h1>Product List</h1>
+<div *ngIf="products" class="container">
+  <div *ngFor="let product of products" class="row">
+    <div class="col">
+      <div *ngIf="product.image != ''">
+        <img [src]="product.image" alt="Image" height="150" width="220">
+      </div>
+      <h3>{{ product.title }}</h3>
+      <h3>${{ product.price }}</h3>
+      <button [routerLink]="['../edit/'+product._id]"> Edit</button> || <button (click)="productDelete(product._id)">Delete</button>
+      </div>
+  </div>
+</div>
+</div>
