@@ -1,0 +1,10 @@
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Box_Unboxing/obj/Debug/netcoreapp2.0/Box_Unboxing.csproj.CoreCompileInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Box_Unboxing/obj/Debug/netcoreapp2.0/Box_Unboxing.AssemblyInfoInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Box_Unboxing/obj/Debug/netcoreapp2.0/Box_Unboxing.AssemblyInfo.cs
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Box_Unboxing/bin/Debug/netcoreapp2.0/Box_Unboxing.deps.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Box_Unboxing/bin/Debug/netcoreapp2.0/Box_Unboxing.runtimeconfig.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Box_Unboxing/bin/Debug/netcoreapp2.0/Box_Unboxing.runtimeconfig.dev.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Box_Unboxing/bin/Debug/netcoreapp2.0/Box_Unboxing.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Box_Unboxing/bin/Debug/netcoreapp2.0/Box_Unboxing.pdb
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Box_Unboxing/obj/Debug/netcoreapp2.0/Box_Unboxing.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Box_Unboxing/obj/Debug/netcoreapp2.0/Box_Unboxing.pdb
