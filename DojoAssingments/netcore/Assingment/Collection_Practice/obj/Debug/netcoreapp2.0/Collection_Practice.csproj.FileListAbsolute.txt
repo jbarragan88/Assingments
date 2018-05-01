@@ -1,0 +1,10 @@
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Collection_Practice/bin/Debug/netcoreapp2.0/Collection_Practice.deps.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Collection_Practice/bin/Debug/netcoreapp2.0/Collection_Practice.runtimeconfig.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Collection_Practice/bin/Debug/netcoreapp2.0/Collection_Practice.runtimeconfig.dev.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Collection_Practice/bin/Debug/netcoreapp2.0/Collection_Practice.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Collection_Practice/bin/Debug/netcoreapp2.0/Collection_Practice.pdb
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Collection_Practice/obj/Debug/netcoreapp2.0/Collection_Practice.csproj.CoreCompileInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Collection_Practice/obj/Debug/netcoreapp2.0/Collection_Practice.AssemblyInfoInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Collection_Practice/obj/Debug/netcoreapp2.0/Collection_Practice.AssemblyInfo.cs
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Collection_Practice/obj/Debug/netcoreapp2.0/Collection_Practice.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Collection_Practice/obj/Debug/netcoreapp2.0/Collection_Practice.pdb

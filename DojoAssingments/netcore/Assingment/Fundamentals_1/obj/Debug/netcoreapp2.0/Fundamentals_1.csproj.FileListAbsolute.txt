@@ -1,0 +1,10 @@
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Fundamentals_1/bin/Debug/netcoreapp2.0/Fundamentals_1.deps.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Fundamentals_1/bin/Debug/netcoreapp2.0/Fundamentals_1.runtimeconfig.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Fundamentals_1/bin/Debug/netcoreapp2.0/Fundamentals_1.runtimeconfig.dev.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Fundamentals_1/bin/Debug/netcoreapp2.0/Fundamentals_1.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Fundamentals_1/bin/Debug/netcoreapp2.0/Fundamentals_1.pdb
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Fundamentals_1/obj/Debug/netcoreapp2.0/Fundamentals_1.csproj.CoreCompileInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Fundamentals_1/obj/Debug/netcoreapp2.0/Fundamentals_1.AssemblyInfoInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Fundamentals_1/obj/Debug/netcoreapp2.0/Fundamentals_1.AssemblyInfo.cs
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Fundamentals_1/obj/Debug/netcoreapp2.0/Fundamentals_1.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Fundamentals_1/obj/Debug/netcoreapp2.0/Fundamentals_1.pdb
