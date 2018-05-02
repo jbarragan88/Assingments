@@ -1,0 +1,10 @@
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Basic_13/obj/Debug/netcoreapp2.0/Basic_13.csproj.CoreCompileInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Basic_13/obj/Debug/netcoreapp2.0/Basic_13.AssemblyInfoInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Basic_13/obj/Debug/netcoreapp2.0/Basic_13.AssemblyInfo.cs
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Basic_13/bin/Debug/netcoreapp2.0/Basic_13.deps.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Basic_13/bin/Debug/netcoreapp2.0/Basic_13.runtimeconfig.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Basic_13/bin/Debug/netcoreapp2.0/Basic_13.runtimeconfig.dev.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Basic_13/bin/Debug/netcoreapp2.0/Basic_13.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Basic_13/bin/Debug/netcoreapp2.0/Basic_13.pdb
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Basic_13/obj/Debug/netcoreapp2.0/Basic_13.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Basic_13/obj/Debug/netcoreapp2.0/Basic_13.pdb
