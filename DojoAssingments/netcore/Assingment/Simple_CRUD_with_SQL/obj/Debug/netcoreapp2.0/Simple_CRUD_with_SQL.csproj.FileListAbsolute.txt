@@ -1,0 +1,10 @@
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Simple_CRUD_with_SQL/bin/Debug/netcoreapp2.0/Simple_CRUD_with_SQL.deps.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Simple_CRUD_with_SQL/bin/Debug/netcoreapp2.0/Simple_CRUD_with_SQL.runtimeconfig.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Simple_CRUD_with_SQL/bin/Debug/netcoreapp2.0/Simple_CRUD_with_SQL.runtimeconfig.dev.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Simple_CRUD_with_SQL/bin/Debug/netcoreapp2.0/Simple_CRUD_with_SQL.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Simple_CRUD_with_SQL/bin/Debug/netcoreapp2.0/Simple_CRUD_with_SQL.pdb
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Simple_CRUD_with_SQL/obj/Debug/netcoreapp2.0/Simple_CRUD_with_SQL.csproj.CoreCompileInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Simple_CRUD_with_SQL/obj/Debug/netcoreapp2.0/Simple_CRUD_with_SQL.AssemblyInfoInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Simple_CRUD_with_SQL/obj/Debug/netcoreapp2.0/Simple_CRUD_with_SQL.AssemblyInfo.cs
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Simple_CRUD_with_SQL/obj/Debug/netcoreapp2.0/Simple_CRUD_with_SQL.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Simple_CRUD_with_SQL/obj/Debug/netcoreapp2.0/Simple_CRUD_with_SQL.pdb
