@@ -44,5 +44,14 @@ namespace YourNamespace.Controllers
             // Method body
         // }
 
+        [HttpGet]
+        [Route("")]
+        public IActionResult Index()
+        {
+            // return View();
+            //OR
+            return View("Index");
+            //Both of these returns will render the same view (You only need one!)
+        }
     }
 }
