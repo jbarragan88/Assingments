@@ -35,11 +35,11 @@ namespace set_up
 
             app.UseMvc( routes =>
             {
-                routes.MapRoute(
-                    name: "Default", // The route's name is only for our own reference
-                    template: "", // The pattern that the route matches
-                    defaults: new {controller = "hello", action = "Index"} // The controller and method to execute
-                );
+                // routes.MapRoute(
+                //     name: "Default", // The route's name is only for our own reference
+                //     template: "", // The pattern that the route matches
+                //     defaults: new {controller = "hello", action = "Index"} // The controller and method to execute
+                // ); ..
             });
 
             app.Run(async (context) =>
