@@ -6,5 +6,19 @@
     </head>
     <body>
         <h1>Hello ASP.NET Mvc!</h1>
+        @{
+            var StringList = new List<string>{
+                "one",
+                "two",
+                "three",
+                "four"
+            };
+            
+            foreach(var word in StringList)
+            {
+                // We can render HTML from within C# code!
+                <p>@word</p>
+            }
+        }
     </body>
 </html>
