@@ -1,0 +1,10 @@
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/set_up/bin/Debug/netcoreapp2.0/set_up.deps.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/set_up/bin/Debug/netcoreapp2.0/set_up.runtimeconfig.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/set_up/bin/Debug/netcoreapp2.0/set_up.runtimeconfig.dev.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/set_up/bin/Debug/netcoreapp2.0/set_up.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/set_up/bin/Debug/netcoreapp2.0/set_up.pdb
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/set_up/obj/Debug/netcoreapp2.0/set_up.csproj.CoreCompileInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/set_up/obj/Debug/netcoreapp2.0/set_up.AssemblyInfoInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/set_up/obj/Debug/netcoreapp2.0/set_up.AssemblyInfo.cs
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/set_up/obj/Debug/netcoreapp2.0/set_up.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/set_up/obj/Debug/netcoreapp2.0/set_up.pdb
