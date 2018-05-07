@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 using Microsoft.Extensions.Logging;
 
-namespace set_up
+namespace Calling_Card
 {
     public class Startup
     {
@@ -27,22 +27,9 @@ namespace set_up
 
             if (env.IsDevelopment())
             {
-            app.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage();
             }
-
-            // if (env.IsDevelopment())
-            // {
-            //     app.UseDeveloperExceptionPage();
-            // }
-
-            app.UseMvc( routes =>
-            {
-                // routes.MapRoute(
-                //     name: "Default", // The route's name is only for our own reference
-                //     template: "", // The pattern that the route matches
-                //     defaults: new {controller = "hello", action = "Index"} // The controller and method to execute
-                // ); ..
-            });
+            app.UseMvc();
 
             app.Run(async (context) =>
             {

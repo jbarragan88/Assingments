@@ -1,0 +1,10 @@
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Calling_Card/bin/Debug/netcoreapp2.0/Calling_Card.deps.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Calling_Card/bin/Debug/netcoreapp2.0/Calling_Card.runtimeconfig.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Calling_Card/bin/Debug/netcoreapp2.0/Calling_Card.runtimeconfig.dev.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Calling_Card/bin/Debug/netcoreapp2.0/Calling_Card.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Calling_Card/bin/Debug/netcoreapp2.0/Calling_Card.pdb
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Calling_Card/obj/Debug/netcoreapp2.0/Calling_Card.csproj.CoreCompileInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Calling_Card/obj/Debug/netcoreapp2.0/Calling_Card.AssemblyInfoInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Calling_Card/obj/Debug/netcoreapp2.0/Calling_Card.AssemblyInfo.cs
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Calling_Card/obj/Debug/netcoreapp2.0/Calling_Card.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Calling_Card/obj/Debug/netcoreapp2.0/Calling_Card.pdb
