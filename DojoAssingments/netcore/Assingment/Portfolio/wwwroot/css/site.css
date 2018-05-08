@@ -1,1 +1,13 @@
 /*Write all of your CSS here*/
+body { 
+    background-color: red;
+    text-align: center;
+}
+li {
+    display: inline-block;
+    margin-left: 5px;
+}
+p {
+    width: 500px;
+    margin-left: 450px;
+}
