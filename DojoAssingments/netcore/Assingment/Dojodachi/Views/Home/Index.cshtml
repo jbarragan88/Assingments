@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<p>Fullness: @ViewBag.fullness</p>
+<p>Happiness: @ViewBag.happiness</p>
+<p>Meals: @ViewBag.meals</p>
+<p>Energy: @ViewBag.energy</p>
+@{
+    if(TempData["message"] != null){
+        string message = (string)TempData["message"];
+        <p style="color: red;">@message</p>
+    }
+    else if(TempData["WorL"] != null){
+        string message = (string)TempData["WorL"];
+        <p style="color: green;">@message</p>
+        <a href="/reset">Restart</a>
+    }
+}
+<a href="/feed">Feed</a>
+<a href="/play">Play</a>
+<a href="/work">Work</a>
+<a href="/sleep">Sleep</a>
