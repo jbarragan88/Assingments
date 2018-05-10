@@ -20,7 +20,6 @@ namespace QuotingDojo.Controllers
                 return RedirectToAction("Index");
             }
             catch {
-                //I don't understand what is being asked -- how do you return a view without re-rendering the page and losing the form data?
                 ViewBag.message = "There was an error in your submission.";
                 return View("Form");
             }

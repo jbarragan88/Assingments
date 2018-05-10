@@ -1,0 +1,10 @@
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Form_Submission/bin/Debug/netcoreapp2.0/Form_Submission.deps.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Form_Submission/bin/Debug/netcoreapp2.0/Form_Submission.runtimeconfig.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Form_Submission/bin/Debug/netcoreapp2.0/Form_Submission.runtimeconfig.dev.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Form_Submission/bin/Debug/netcoreapp2.0/Form_Submission.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Form_Submission/bin/Debug/netcoreapp2.0/Form_Submission.pdb
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Form_Submission/obj/Debug/netcoreapp2.0/Form_Submission.csproj.CoreCompileInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Form_Submission/obj/Debug/netcoreapp2.0/Form_Submission.AssemblyInfoInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Form_Submission/obj/Debug/netcoreapp2.0/Form_Submission.AssemblyInfo.cs
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Form_Submission/obj/Debug/netcoreapp2.0/Form_Submission.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Form_Submission/obj/Debug/netcoreapp2.0/Form_Submission.pdb
