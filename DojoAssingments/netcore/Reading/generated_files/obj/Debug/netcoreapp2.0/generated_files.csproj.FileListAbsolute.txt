@@ -1,0 +1,10 @@
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/generated_files/bin/Debug/netcoreapp2.0/generated_files.deps.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/generated_files/bin/Debug/netcoreapp2.0/generated_files.runtimeconfig.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/generated_files/bin/Debug/netcoreapp2.0/generated_files.runtimeconfig.dev.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/generated_files/bin/Debug/netcoreapp2.0/generated_files.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/generated_files/bin/Debug/netcoreapp2.0/generated_files.pdb
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/generated_files/obj/Debug/netcoreapp2.0/generated_files.csproj.CoreCompileInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/generated_files/obj/Debug/netcoreapp2.0/generated_files.AssemblyInfoInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/generated_files/obj/Debug/netcoreapp2.0/generated_files.AssemblyInfo.cs
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/generated_files/obj/Debug/netcoreapp2.0/generated_files.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Reading/generated_files/obj/Debug/netcoreapp2.0/generated_files.pdb

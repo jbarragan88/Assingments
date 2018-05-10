@@ -1,6 +1,6 @@
 using System;
 
-namespace generated_files.Models
+namespace QuotingDojo.Models
 {
     public class ErrorViewModel
     {

@@ -1,34 +1,44 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using generated_files.Models;
+using QuotingDojo.Models;
+using DbConnection;
 
-namespace generated_files.Controllers
+namespace QuotingDojo.Controllers
 {
     public class HomeController : Controller
     {
+        public IActionResult NewComment(string name, string comment)
+        {
+            string query = $"INSERT INTO messages (name, comment) VALUES ('{name}', '{comment}') ";
+            try {
+                DbConnector.Execute(query);
+                return RedirectToAction("Index");
+            }
+            catch {
+                //I don't understand what is being asked -- how do you return a view without re-rendering the page and losing the form data?
+                ViewBag.message = "There was an error in your submission.";
+                return View("Form");
+            }
+        }
+        [HttpGet]
+        [Route("")]
+        public IActionResult Form()
+        {
+            return View("Form");
+        }
+        [HttpGet]
+        [Route("Index")]
         public IActionResult Index()
         {
+            var result = DbConnector.Query("SELECT * FROM messages ORDER BY  created_at DESC");
+            ViewBag.result = result;
             return View();
         }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
