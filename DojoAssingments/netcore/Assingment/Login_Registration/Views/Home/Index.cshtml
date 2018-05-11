@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container">
+    @model Login_Registration.Models.User
+
+    <br>
+    <hr>
+
+    <div asp-validation-summary="All"></div>
+
+    <form asp-controller="Home" asp-action="Register" method="post">
+        <span asp-validation-for="First_Name"></span>
+        <label asp-for="First_Name">First Name</label>
+        <input asp-for="First_Name"/>
+
+        <span asp-validation-for="Last_Name"></span>
+        <label asp-for="Last_Name">Last Name</label>
+        <input asp-for="Last_Name"/>
+
+        <span asp-validation-for="Email"></span>
+        <label asp-for="Email"></label>
+        <input asp-for="Email"/>
+
+        <span asp-validation-for="Password"></span>
+        <label asp-for="Password">Password</label>
+        <input asp-for="Password"/>
+        <br>
+        <span asp-validation-for="Confirm_Password"></span>
+        <label asp-for="Confirm_Password">Confirm Password</label>
+        <input asp-for="Confirm_Password"/>
+        <button type="submit">Create new User</button>
+    </form>
+</div>

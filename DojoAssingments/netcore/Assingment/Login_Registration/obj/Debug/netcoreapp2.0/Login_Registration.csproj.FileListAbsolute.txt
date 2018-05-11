@@ -1,0 +1,10 @@
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Login_Registration/obj/Debug/netcoreapp2.0/Login_Registration.csproj.CoreCompileInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Login_Registration/obj/Debug/netcoreapp2.0/Login_Registration.AssemblyInfoInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Login_Registration/obj/Debug/netcoreapp2.0/Login_Registration.AssemblyInfo.cs
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Login_Registration/bin/Debug/netcoreapp2.0/Login_Registration.deps.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Login_Registration/bin/Debug/netcoreapp2.0/Login_Registration.runtimeconfig.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Login_Registration/bin/Debug/netcoreapp2.0/Login_Registration.runtimeconfig.dev.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Login_Registration/bin/Debug/netcoreapp2.0/Login_Registration.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Login_Registration/bin/Debug/netcoreapp2.0/Login_Registration.pdb
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Login_Registration/obj/Debug/netcoreapp2.0/Login_Registration.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/Assingment/Login_Registration/obj/Debug/netcoreapp2.0/Login_Registration.pdb
