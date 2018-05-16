@@ -1,0 +1,41 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model Restaurant.Models.Review
+<div class="container">
+    <h1>Write A New Review</h1>
+    <form asp-action="New_Review" method="POST">
+        <label>Your Name:</label>
+        <br>
+        <input asp-for="Reviewer">
+        <small class="text-danger"><span asp-validation-for="Reviewer"></span></small>
+        <br>
+        <hr>
+        <label>Restaurant Name:</label>
+        <br>
+        <input asp-for="Restaurant">
+        <small class="text-danger"><span asp-validation-for="Restaurant"></span></small>
+        <br>
+        <hr>
+        <label>Review</label>
+        <br>
+        <textarea asp-for="review"></textarea>
+        <small class="text-danger"><span asp-validation-for="review"></span></small>
+        <br>
+        <hr>
+        <label>Date of Visit:</label>
+        <br>
+        <input type="date" asp-for="Visit">
+        <small class="text-danger"><span asp-validation-for="Visit"></span></small>
+        <br>
+        <hr>
+        <label>Rating:</label>
+        <br>
+        <input min="1" max="5" asp-for="Rating">
+        <small class="text-danger"><span asp-validation-for="Rating"></span></small>
+        <hr>
+
+        <button>Submit</button>
+    </form>
+    <a asp-action="Reviews"><button>View Reviews</button></a>
+</div>

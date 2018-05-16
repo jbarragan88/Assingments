@@ -1,0 +1,21 @@
+<h1>Reviews</h1>
+@{
+    foreach (var review in ViewBag.Reviews)
+    {
+        <hr>
+        <h3>Reviewer:</h3>
+        <h5>@review.Reviewer ,Date Of Visit: @review.Visit</h5>
+
+        <h3>Restaurant:</h3>
+        <h5>@review.Restaurant</h5>
+
+        <h3>Rating:</h3>
+        <h5>@review.Rating</h5>
+
+        <h3>Review:</h3>
+        <h5>@review.review</h5>
+    }
+}
+<hr>
+
+<a asp-action="Index"><button>Review A Restaurant</button></a>
