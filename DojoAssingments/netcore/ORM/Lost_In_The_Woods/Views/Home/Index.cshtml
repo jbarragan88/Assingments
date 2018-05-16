@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Lost In The Woods</h1>
+<table>
+    <tr>
+        <th>Trail Name ||</th>
+        <th>Trail Length ||</th>
+        <th>Elevation Change</th>
+    </tr>
+@{
+    foreach(var trail in ViewBag.Trails){
+        <tr>
+            <td><a asp-route-id=@trail.idTrail asp-controller="Home" asp-action="Trail">@trail.Name</a></td>
+            <td>| @trail.Length</td>
+            <td>| @trail.Elevation</td>
+        </tr>
+    }
+}
+</table>
+<br>
+<a asp-controller="Home" asp-action="NewTrail"><button>Add A Trail</button></a>

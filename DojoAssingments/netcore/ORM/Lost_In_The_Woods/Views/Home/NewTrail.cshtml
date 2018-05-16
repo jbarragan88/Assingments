@@ -1,0 +1,32 @@
+<h1> Create A New Trail</h1>
+<h4>Follow Your Path</h4>
+@model Lost_In_The_Woods.Models.TrailViewModel
+
+<form asp-controller="Home" asp-action="Add" method="post">
+    <span asp-validation-for="Name"></span>
+    <label asp-for="Name">Trail Name</label>
+    <input asp-for="Name" name="Name">
+
+    <span asp-validation-for="Description"></span>
+    <label asp-for="Description">Description</label>
+    <input asp-for="Description" name="Description">
+
+    <span asp-validation-for="Length"></span>
+    <label asp-for="Length">Trail Length</label>
+    <input step="0.01" type="number" asp-for="Length" name="Length"> 
+
+    <span asp-validation-for="Elevation"></span>
+    <label asp-for="Elevation">Elvation Change</label>
+    <input step="0.01" type="number" asp-for="Elevation" name="Elevation">
+
+    <span asp-validation-for="Longitude"></span>
+    <label asp-for="Longitude">Longitude & Latitude</label>
+    <input step="0.0001" type="number" asp-for="Longitude" name="Longitude">
+
+    <span asp-validation-for="Latitude"></span>
+    <label asp-for="Latitude">Longitude & Latitude</label>
+    <input step="0.0001" type="number" asp-for="Latitude" name="Latitude">
+
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>
+<a asp-controller="Home" asp-action="Index"><button>Go Back</button></a>

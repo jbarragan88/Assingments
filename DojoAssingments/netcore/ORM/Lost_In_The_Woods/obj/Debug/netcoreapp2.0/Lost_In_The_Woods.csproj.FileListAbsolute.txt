@@ -1,0 +1,10 @@
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/ORM/Lost_In_The_Woods/obj/Debug/netcoreapp2.0/Lost_In_The_Woods.csproj.CoreCompileInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/ORM/Lost_In_The_Woods/obj/Debug/netcoreapp2.0/Lost_In_The_Woods.AssemblyInfoInputs.cache
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/ORM/Lost_In_The_Woods/obj/Debug/netcoreapp2.0/Lost_In_The_Woods.AssemblyInfo.cs
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/ORM/Lost_In_The_Woods/bin/Debug/netcoreapp2.0/Lost_In_The_Woods.deps.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/ORM/Lost_In_The_Woods/bin/Debug/netcoreapp2.0/Lost_In_The_Woods.runtimeconfig.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/ORM/Lost_In_The_Woods/bin/Debug/netcoreapp2.0/Lost_In_The_Woods.runtimeconfig.dev.json
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/ORM/Lost_In_The_Woods/bin/Debug/netcoreapp2.0/Lost_In_The_Woods.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/ORM/Lost_In_The_Woods/bin/Debug/netcoreapp2.0/Lost_In_The_Woods.pdb
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/ORM/Lost_In_The_Woods/obj/Debug/netcoreapp2.0/Lost_In_The_Woods.dll
+/Users/jbarragan/Documents/GitHub/Assingments/DojoAssingments/netcore/ORM/Lost_In_The_Woods/obj/Debug/netcoreapp2.0/Lost_In_The_Woods.pdb
