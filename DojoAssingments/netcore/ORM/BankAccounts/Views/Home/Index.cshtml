@@ -1,5 +1,66 @@
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Login Register";
 }
-<h1>Default Blank Page~</h1>
-<p>Get to adding stuff</p>
+<div class="container">
+    @model BankAccounts.Models.RegisterViewModel
+    <h1>Register Login</h1>
+
+    <br>
+    <hr>
+
+    <!-- <div asp-validation-summary="All"></div> -->
+    @{
+        if(ViewBag.duplicate == true){
+            <ul>
+                <li>Email Already In Use</li>
+            </ul>
+        }
+    }
+
+    <form asp-controller="Home" asp-action="Register" method="post">
+        <span asp-validation-for="First_Name"></span>
+        <label asp-for="First_Name">First Name</label>
+        <input asp-for="First_Name" name="First_Name"/>
+
+        <span asp-validation-for="Last_Name"></span>
+        <label asp-for="Last_Name">Last Name</label>
+        <input asp-for="Last_Name" name="Last_Name"/>
+
+        <span asp-validation-for="Email"></span>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" name="email"/>
+
+        <span asp-validation-for="Password"></span>
+        <label asp-for="Password">Password</label>
+        <input type="password" asp-for="Password" name="Password"/>
+        <br>
+        <span asp-validation-for="PasswordConfirmation"></span>
+        <label asp-for="PasswordConfirmation">Confirm Password</label>
+        <input type="password" asp-for="PasswordConfirmation"/>
+        <button type="submit">Create new User</button>
+    </form>
+
+    <br>
+    <hr>
+
+    @{
+        if(ViewBag.login == false){
+            <ul>
+                <li>Incorrect Email/Password</li>
+            </ul>
+        }
+    }
+
+    <form asp-controller="Home" asp-action="Login" method="post">
+
+        <span asp-validation-for="Email"></span>
+        <label for="login_email">Email</label>
+        <input  id="login_email" name="Email"/>
+
+        <span asp-validation-for="Password"></span>
+        <label for="Password">Password</label>
+        <input type="password" id="Password" name="Password"/>
+        <br>
+        <button type="submit">Log In</button>
+    </form>
+</div>
