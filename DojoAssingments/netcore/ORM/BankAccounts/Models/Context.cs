@@ -7,5 +7,6 @@ namespace BankAccounts.Models
         // base() calls the parent class' constructor passing the "options" parameter along
         public Context(DbContextOptions<Context> options) : base(options) { }
         public DbSet<User> User {get; set;}
+        public DbSet<Transaction> Transaction {get; set;}
     }
 }

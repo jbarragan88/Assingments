@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using BankAccounts.Models;
 using System.Linq;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace BankAccounts.Controllers
 {
@@ -46,7 +46,7 @@ namespace BankAccounts.Controllers
                     _context.SaveChanges();
                     HttpContext.Session.SetString("user",newUser.Email);
 
-                    return View("Bank");
+                    return RedirectToAction("Bank");
                 }
             }
             //if an input did not meet a requirement render the index page
@@ -62,19 +62,38 @@ namespace BankAccounts.Controllers
             {
                 User aUser = _context.User.SingleOrDefault(qUser => qUser.Email == email);
                 if (aUser != null && password != null){
-                // if (aUser.Password == password){
                     if(0 != Hasher.VerifyHashedPassword(aUser, aUser.Password, password)){
                     HttpContext.Session.SetString("user", email);
-                    return View("Bank");
+                    return RedirectToAction("Bank");
+                    }
+                    else{
+                        ViewBag.Login = false;
+                        return View("Index");
+                    }
                 }
-                else{
-                    ViewBag.Login = false;
-                    return View("Index");
-                }
-}
             }
             //if an input did not meet a requirement render the index page
             return View("Index");
+        }
+
+        [HttpGet]
+        [Route("Bank")]
+        public IActionResult Bank()
+        {
+                string email = HttpContext.Session.GetString("user");
+                User theUser = _context.User.Include(User => User.Transaction).Where(User => User.Email == email).SingleOrDefault();
+                ViewBag.CompleteUser = theUser;
+                // if (aUser != null && password != null){
+                //     if(0 != Hasher.VerifyHashedPassword(aUser, aUser.Password, password)){
+                //     HttpContext.Session.SetString("user", email);
+                //     return View("Bank");
+                // }
+                // else{
+                //     ViewBag.Login = false;
+                //     return View("Index");
+                // }
+                // }
+            return View("Bank");
         }
     }
 }

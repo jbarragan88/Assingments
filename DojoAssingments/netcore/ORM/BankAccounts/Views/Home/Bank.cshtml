@@ -1,1 +1,10 @@
 <h1>The Bank</h1>
+<h2>Account name:</h2>
+<h3>@ViewBag.CompleteUser.Last_Name, @ViewBag.CompleteUser.First_Name</h3>
+<h2>Account Balance:</h2>
+<h3>@ViewBag.CompleteUser.Balance</h3>
+@{
+    @foreach (var trans in ViewBag.CompleteUser.Transaction){
+        <p>@trans.Amount</p>
+    }
+}
